@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		999DB8032908869400D4AD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8022908869400D4AD0A /* AppDelegate.swift */; };
+		999DB8052908869400D4AD0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8042908869400D4AD0A /* SceneDelegate.swift */; };
+		999DB8072908869400D4AD0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8062908869400D4AD0A /* ViewController.swift */; };
+		999DB80A2908869400D4AD0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999DB8082908869400D4AD0A /* Main.storyboard */; };
+		999DB80C2908869600D4AD0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999DB80B2908869600D4AD0A /* Assets.xcassets */; };
+		999DB80F2908869600D4AD0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999DB80D2908869600D4AD0A /* LaunchScreen.storyboard */; };
+		999DB81A2908869600D4AD0A /* MAD_3115_TeamSundryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8192908869600D4AD0A /* MAD_3115_TeamSundryTests.swift */; };
+		999DB8242908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8232908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift */; };
+		999DB8262908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8252908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		999DB8162908869600D4AD0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 999DB7F72908869400D4AD0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 999DB7FE2908869400D4AD0A;
+			remoteInfo = MAD_3115_TeamSundry;
+		};
+		999DB8202908869600D4AD0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 999DB7F72908869400D4AD0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 999DB7FE2908869400D4AD0A;
+			remoteInfo = MAD_3115_TeamSundry;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		999DB7FF2908869400D4AD0A /* MAD_3115_TeamSundry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAD_3115_TeamSundry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		999DB8022908869400D4AD0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		999DB8042908869400D4AD0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		999DB8062908869400D4AD0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		999DB8092908869400D4AD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		999DB80B2908869600D4AD0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		999DB80E2908869600D4AD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		999DB8102908869600D4AD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		999DB8152908869600D4AD0A /* MAD_3115_TeamSundryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAD_3115_TeamSundryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		999DB8192908869600D4AD0A /* MAD_3115_TeamSundryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAD_3115_TeamSundryTests.swift; sourceTree = "<group>"; };
+		999DB81F2908869600D4AD0A /* MAD_3115_TeamSundryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAD_3115_TeamSundryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		999DB8232908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAD_3115_TeamSundryUITests.swift; sourceTree = "<group>"; };
+		999DB8252908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAD_3115_TeamSundryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		999DB7FC2908869400D4AD0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999DB8122908869600D4AD0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999DB81C2908869600D4AD0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		999DB7F62908869400D4AD0A = {
+			isa = PBXGroup;
+			children = (
+				999DB8012908869400D4AD0A /* MAD_3115_TeamSundry */,
+				999DB8182908869600D4AD0A /* MAD_3115_TeamSundryTests */,
+				999DB8222908869600D4AD0A /* MAD_3115_TeamSundryUITests */,
+				999DB8002908869400D4AD0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		999DB8002908869400D4AD0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				999DB7FF2908869400D4AD0A /* MAD_3115_TeamSundry.app */,
+				999DB8152908869600D4AD0A /* MAD_3115_TeamSundryTests.xctest */,
+				999DB81F2908869600D4AD0A /* MAD_3115_TeamSundryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		999DB8012908869400D4AD0A /* MAD_3115_TeamSundry */ = {
+			isa = PBXGroup;
+			children = (
+				999DB8022908869400D4AD0A /* AppDelegate.swift */,
+				999DB8042908869400D4AD0A /* SceneDelegate.swift */,
+				999DB8062908869400D4AD0A /* ViewController.swift */,
+				999DB8082908869400D4AD0A /* Main.storyboard */,
+				999DB80B2908869600D4AD0A /* Assets.xcassets */,
+				999DB80D2908869600D4AD0A /* LaunchScreen.storyboard */,
+				999DB8102908869600D4AD0A /* Info.plist */,
+			);
+			path = MAD_3115_TeamSundry;
+			sourceTree = "<group>";
+		};
+		999DB8182908869600D4AD0A /* MAD_3115_TeamSundryTests */ = {
+			isa = PBXGroup;
+			children = (
+				999DB8192908869600D4AD0A /* MAD_3115_TeamSundryTests.swift */,
+			);
+			path = MAD_3115_TeamSundryTests;
+			sourceTree = "<group>";
+		};
+		999DB8222908869600D4AD0A /* MAD_3115_TeamSundryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				999DB8232908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift */,
+				999DB8252908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift */,
+			);
+			path = MAD_3115_TeamSundryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		999DB7FE2908869400D4AD0A /* MAD_3115_TeamSundry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 999DB8292908869600D4AD0A /* Build configuration list for PBXNativeTarget "MAD_3115_TeamSundry" */;
+			buildPhases = (
+				999DB7FB2908869400D4AD0A /* Sources */,
+				999DB7FC2908869400D4AD0A /* Frameworks */,
+				999DB7FD2908869400D4AD0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MAD_3115_TeamSundry;
+			productName = MAD_3115_TeamSundry;
+			productReference = 999DB7FF2908869400D4AD0A /* MAD_3115_TeamSundry.app */;
+			productType = "com.apple.product-type.application";
+		};
+		999DB8142908869600D4AD0A /* MAD_3115_TeamSundryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 999DB82C2908869600D4AD0A /* Build configuration list for PBXNativeTarget "MAD_3115_TeamSundryTests" */;
+			buildPhases = (
+				999DB8112908869600D4AD0A /* Sources */,
+				999DB8122908869600D4AD0A /* Frameworks */,
+				999DB8132908869600D4AD0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				999DB8172908869600D4AD0A /* PBXTargetDependency */,
+			);
+			name = MAD_3115_TeamSundryTests;
+			productName = MAD_3115_TeamSundryTests;
+			productReference = 999DB8152908869600D4AD0A /* MAD_3115_TeamSundryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		999DB81E2908869600D4AD0A /* MAD_3115_TeamSundryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 999DB82F2908869600D4AD0A /* Build configuration list for PBXNativeTarget "MAD_3115_TeamSundryUITests" */;
+			buildPhases = (
+				999DB81B2908869600D4AD0A /* Sources */,
+				999DB81C2908869600D4AD0A /* Frameworks */,
+				999DB81D2908869600D4AD0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				999DB8212908869600D4AD0A /* PBXTargetDependency */,
+			);
+			name = MAD_3115_TeamSundryUITests;
+			productName = MAD_3115_TeamSundryUITests;
+			productReference = 999DB81F2908869600D4AD0A /* MAD_3115_TeamSundryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		999DB7F72908869400D4AD0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					999DB7FE2908869400D4AD0A = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					999DB8142908869600D4AD0A = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 999DB7FE2908869400D4AD0A;
+					};
+					999DB81E2908869600D4AD0A = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 999DB7FE2908869400D4AD0A;
+					};
+				};
+			};
+			buildConfigurationList = 999DB7FA2908869400D4AD0A /* Build configuration list for PBXProject "MAD_3115_TeamSundry" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 999DB7F62908869400D4AD0A;
+			productRefGroup = 999DB8002908869400D4AD0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				999DB7FE2908869400D4AD0A /* MAD_3115_TeamSundry */,
+				999DB8142908869600D4AD0A /* MAD_3115_TeamSundryTests */,
+				999DB81E2908869600D4AD0A /* MAD_3115_TeamSundryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		999DB7FD2908869400D4AD0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				999DB80F2908869600D4AD0A /* LaunchScreen.storyboard in Resources */,
+				999DB80C2908869600D4AD0A /* Assets.xcassets in Resources */,
+				999DB80A2908869400D4AD0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999DB8132908869600D4AD0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999DB81D2908869600D4AD0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		999DB7FB2908869400D4AD0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				999DB8072908869400D4AD0A /* ViewController.swift in Sources */,
+				999DB8032908869400D4AD0A /* AppDelegate.swift in Sources */,
+				999DB8052908869400D4AD0A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999DB8112908869600D4AD0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				999DB81A2908869600D4AD0A /* MAD_3115_TeamSundryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999DB81B2908869600D4AD0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				999DB8242908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift in Sources */,
+				999DB8262908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		999DB8172908869600D4AD0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 999DB7FE2908869400D4AD0A /* MAD_3115_TeamSundry */;
+			targetProxy = 999DB8162908869600D4AD0A /* PBXContainerItemProxy */;
+		};
+		999DB8212908869600D4AD0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 999DB7FE2908869400D4AD0A /* MAD_3115_TeamSundry */;
+			targetProxy = 999DB8202908869600D4AD0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		999DB8082908869400D4AD0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				999DB8092908869400D4AD0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		999DB80D2908869600D4AD0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				999DB80E2908869600D4AD0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		999DB8272908869600D4AD0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		999DB8282908869600D4AD0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		999DB82A2908869600D4AD0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MAD_3115_TeamSundry/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamSundry.MAD-3115-TeamSundry";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		999DB82B2908869600D4AD0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MAD_3115_TeamSundry/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamSundry.MAD-3115-TeamSundry";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		999DB82D2908869600D4AD0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamSundry.MAD-3115-TeamSundryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MAD_3115_TeamSundry.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MAD_3115_TeamSundry";
+			};
+			name = Debug;
+		};
+		999DB82E2908869600D4AD0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamSundry.MAD-3115-TeamSundryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MAD_3115_TeamSundry.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MAD_3115_TeamSundry";
+			};
+			name = Release;
+		};
+		999DB8302908869600D4AD0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamSundry.MAD-3115-TeamSundryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MAD_3115_TeamSundry;
+			};
+			name = Debug;
+		};
+		999DB8312908869600D4AD0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TeamSundry.MAD-3115-TeamSundryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MAD_3115_TeamSundry;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		999DB7FA2908869400D4AD0A /* Build configuration list for PBXProject "MAD_3115_TeamSundry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				999DB8272908869600D4AD0A /* Debug */,
+				999DB8282908869600D4AD0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		999DB8292908869600D4AD0A /* Build configuration list for PBXNativeTarget "MAD_3115_TeamSundry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				999DB82A2908869600D4AD0A /* Debug */,
+				999DB82B2908869600D4AD0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		999DB82C2908869600D4AD0A /* Build configuration list for PBXNativeTarget "MAD_3115_TeamSundryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				999DB82D2908869600D4AD0A /* Debug */,
+				999DB82E2908869600D4AD0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		999DB82F2908869600D4AD0A /* Build configuration list for PBXNativeTarget "MAD_3115_TeamSundryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				999DB8302908869600D4AD0A /* Debug */,
+				999DB8312908869600D4AD0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 999DB7F72908869400D4AD0A /* Project object */;
+}
