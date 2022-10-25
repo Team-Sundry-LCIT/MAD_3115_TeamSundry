@@ -5,62 +5,47 @@
 
 import Foundation
 
-class Employee {
+protocol Employee{
+    var name: String { get set }
+    var birthYear: Int{  get set }
+    var age: Int { get set }
+    var monthlyIncome: Double { get set }
+    var rate: Int { get set }
+    var employeeVehicle: Vehicle? {get}
+    var contract: Contract? {get set}
     
-    //necessary variables
-    private var _name : String
-    private var _birthYear : Int
-    private var _age : Int
-    private var _monthlyIncome : Double
-    private var _rate : Int = 100
-    private var _employeeVehicle : Vehicle?
+    func calculateAge(birthYear: Int) -> Int
+    func printData(_ msg :String)
+    func annualIncome() -> Double
     
-    //defining setter & getter
-    var name: String {
-        get { return _name }
-        set { _name = newValue }
-    }
+}
+
+struct Employee : Employee {
     
-    var birthYear: Int {
-        get { return _birthYear }
-        set { _birthYear = newValue }
-    }
-    
-    var age: Int {
-        get { return calculateAge(birthYear: _birthYear) }
-        set { _age = newValue }
-    }
-    
-    var monthlyIncome: Double {
-        get { return _monthlyIncome }
-        set { _monthlyIncome = newValue }
-    }
-    
-    var rate: Int {
-        get { return _rate }
-        set { _rate = newValue }
-    }
-    
-    var employeeVehicle: Vehicle? {
-        get { return _employeeVehicle }
-    }
+    var name: String
+    var birthYear: Int
+    var age: Int
+    var monthlyIncome: Double
+    var rate: Int
+    var employeeVehicle: Vehicle?
+    var contract: Contract?
     
     init(name: String,birthYear:Int,rate: Int = 100,employeeVehicle: Vehicle? = nil) {
-        self._name = name;
-        self._birthYear = birthYear;
-        self._age = 0
-        self._monthlyIncome = 0;
+        self.name = name;
+        self.birthYear = birthYear;
+        self.age = 0
+        self.monthlyIncome = 0;
         if(rate < 10) {
-            self._rate = 10
+            self.rate = 10
         }
         else if (rate > 100){
-            self._rate = 100
+            self.rate = 100
         }
         else {
-            self._rate = rate
+            self.rate = rate
         }
         if let employeeVehicle = employeeVehicle {
-            self._employeeVehicle = employeeVehicle
+            self.employeeVehicle = employeeVehicle
         }
     }
     
@@ -89,12 +74,6 @@ class Employee {
     func annualIncome() -> Double {
         let baseYearlyIncome = (monthlyIncome * Double(12)) * Double(rate)/100
         return baseYearlyIncome
-    }
-    
-    private  var _contract : Contract?
-    var contract: Contract? {
-        get { return _contract ?? Contract() }
-        set { _contract = newValue }
     }
 }
 
