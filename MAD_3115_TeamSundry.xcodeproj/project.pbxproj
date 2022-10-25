@@ -16,6 +16,9 @@
 		999DB81A2908869600D4AD0A /* MAD_3115_TeamSundryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8192908869600D4AD0A /* MAD_3115_TeamSundryTests.swift */; };
 		999DB8242908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8232908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift */; };
 		999DB8262908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8252908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift */; };
+		999DB8372908879A00D4AD0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999DB8362908879A00D4AD0A /* Images.xcassets */; };
+		999DB83B2908884800D4AD0A /* Work Space in Resources */ = {isa = PBXBuildFile; fileRef = 999DB8392908884800D4AD0A /* Work Space */; };
+		999DB83C2908884800D4AD0A /* Test Files in Resources */ = {isa = PBXBuildFile; fileRef = 999DB83A2908884800D4AD0A /* Test Files */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		999DB81F2908869600D4AD0A /* MAD_3115_TeamSundryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAD_3115_TeamSundryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		999DB8232908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAD_3115_TeamSundryUITests.swift; sourceTree = "<group>"; };
 		999DB8252908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAD_3115_TeamSundryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		999DB8362908879A00D4AD0A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		999DB8392908884800D4AD0A /* Work Space */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Work Space"; sourceTree = "<group>"; };
+		999DB83A2908884800D4AD0A /* Test Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Test Files"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +105,12 @@
 		999DB8012908869400D4AD0A /* MAD_3115_TeamSundry */ = {
 			isa = PBXGroup;
 			children = (
+				999DB8382908882200D4AD0A /* Files from MAD 3004 */,
+				999DB8352908876900D4AD0A /* Images & Assets */,
+				999DB834290886DD00D4AD0A /* ViewControllers */,
+				999DB832290886B600D4AD0A /* Storyboards */,
 				999DB8022908869400D4AD0A /* AppDelegate.swift */,
 				999DB8042908869400D4AD0A /* SceneDelegate.swift */,
-				999DB8062908869400D4AD0A /* ViewController.swift */,
-				999DB8082908869400D4AD0A /* Main.storyboard */,
-				999DB80B2908869600D4AD0A /* Assets.xcassets */,
-				999DB80D2908869600D4AD0A /* LaunchScreen.storyboard */,
 				999DB8102908869600D4AD0A /* Info.plist */,
 			);
 			path = MAD_3115_TeamSundry;
@@ -125,6 +131,41 @@
 				999DB8252908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift */,
 			);
 			path = MAD_3115_TeamSundryUITests;
+			sourceTree = "<group>";
+		};
+		999DB832290886B600D4AD0A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				999DB8082908869400D4AD0A /* Main.storyboard */,
+				999DB80D2908869600D4AD0A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		999DB834290886DD00D4AD0A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				999DB8062908869400D4AD0A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		999DB8352908876900D4AD0A /* Images & Assets */ = {
+			isa = PBXGroup;
+			children = (
+				999DB80B2908869600D4AD0A /* Assets.xcassets */,
+				999DB8362908879A00D4AD0A /* Images.xcassets */,
+			);
+			path = "Images & Assets";
+			sourceTree = "<group>";
+		};
+		999DB8382908882200D4AD0A /* Files from MAD 3004 */ = {
+			isa = PBXGroup;
+			children = (
+				999DB83A2908884800D4AD0A /* Test Files */,
+				999DB8392908884800D4AD0A /* Work Space */,
+			);
+			path = "Files from MAD 3004";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				999DB80F2908869600D4AD0A /* LaunchScreen.storyboard in Resources */,
+				999DB83C2908884800D4AD0A /* Test Files in Resources */,
+				999DB8372908879A00D4AD0A /* Images.xcassets in Resources */,
+				999DB83B2908884800D4AD0A /* Work Space in Resources */,
 				999DB80C2908869600D4AD0A /* Assets.xcassets in Resources */,
 				999DB80A2908869400D4AD0A /* Main.storyboard in Resources */,
 			);
