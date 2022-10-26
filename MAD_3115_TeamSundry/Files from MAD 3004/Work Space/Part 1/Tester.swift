@@ -8,12 +8,10 @@ import Foundation
 protocol TesterProtocol  {
     var nbBugs: Int { get set }
     let gainFactorError: Int { get }
-    
-    func annualIncome() -> Double
 }
 
-struct Tester: TesterProtocol, EmployeeProtocol {
-    
+struct Tester: TesterProtocol, EmployeeProtocol {    
+  
     var name: String
     var birthYear: Int
     var age: Int
@@ -23,11 +21,6 @@ struct Tester: TesterProtocol, EmployeeProtocol {
     var contract: Contract?
     var nbBugs: Int=0
     let GainFactorError = 10
-
-    
-    func printMessage() {
-        printData("We have a new employee: \(name), a tester")
-    }
     
     init(name: String, birthYear: Int,nbBugs: Int,rate:Int=100,employeeVehicle: Vehicle?=nil){
         self.name = name

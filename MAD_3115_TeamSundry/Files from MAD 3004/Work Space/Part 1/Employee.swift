@@ -16,8 +16,7 @@ protocol EmployeeProtocol{
     
     func calculateAge(birthYear: Int) -> Int
     func printData(_ msg :String)
-    func annualIncome() -> Double
-    
+    func annualIncome() -> Double    
 }
 
 struct Employee : EmployeeProtocol {
