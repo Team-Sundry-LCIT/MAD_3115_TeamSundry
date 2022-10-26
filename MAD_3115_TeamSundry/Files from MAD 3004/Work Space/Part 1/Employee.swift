@@ -78,18 +78,13 @@ struct Employee : Employee {
 }
 
 //MARK: - Employee Extension
-extension Employee : CustomStringConvertible {
-    @objc var description: String {
-        
-        let a =
-        """
-        Name: \(name), a \(Self.self) \n
-        Age: \(age)
-        \(employeeVehicle ?? Vehicle())
-        \(name) has an Occupation rate: \(rate)%
-        """
-        
-        return a
-    }
+extension CustomStringConvertible where Self: Employee {
+  var description: String {
+      """
+      Name: \(name), a \(Self.self) \n
+      Age: \(age)
+      \(employeeVehicle ?? Vehicle())
+      \(name) has an Occupation rate: \(rate)%
+      """
+  }
 }
-
