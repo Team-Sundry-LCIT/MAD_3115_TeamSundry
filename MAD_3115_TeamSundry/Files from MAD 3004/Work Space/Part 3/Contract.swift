@@ -27,5 +27,15 @@ extension Employee: EmployeeContract{
     }
 }
 
-
+extension Tester: EmployeeContract{
+    
+    mutating func signContract(contract:   ContractProtocol) {
+        monthlyIncome = contract.accumulatedSalary()
+        self.contract = contract
+   }
+       
+    func contractInfo() -> String {
+        return "\(name) is a tester."       
+    }
+}
 
