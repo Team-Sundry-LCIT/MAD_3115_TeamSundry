@@ -50,12 +50,12 @@ struct Employee : EmployeeProtocol {
     }
     
     func calculateAge(birthYear: Int) -> Int {
-         if birthYear > 0 {
-         let date = Date()
-         let currentYear = Calendar.current.component(.year, from: date)
-         return currentYear - birthYear
+        if birthYear > 0 {
+            let date = Date()
+            let currentYear = Calendar.current.component(.year, from: date)
+            return currentYear - birthYear
          }
-         return 0   
+         return 0
     }
     
     func printData(_ msg :String){
