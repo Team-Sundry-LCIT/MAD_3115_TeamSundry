@@ -18,8 +18,8 @@ struct Tester: TesterProtocol, EmployeeProtocol {
     var monthlyIncome: Double
     var rate: Int
     var employeeVehicle: Vehicle?
-    var contract: Contract?
-    var nbBugs: Int=0
+    var contract: ContractProtocol?
+    var nbBugs: Int = 0
     let GainFactorError = 10
     
     init(name: String, birthYear: Int,nbBugs: Int,rate:Int=100,employeeVehicle: Vehicle?=nil){

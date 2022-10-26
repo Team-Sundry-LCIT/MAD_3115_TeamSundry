@@ -12,11 +12,12 @@ protocol EmployeeProtocol{
     var monthlyIncome: Double { get set }
     var rate: Int { get set }
     var employeeVehicle: Vehicle? {get}
-    var contract: Contract? {get set}
+    var contract: ContractProtocol? { get set }
     
     func calculateAge(birthYear: Int) -> Int
     func printData(_ msg :String)
-    func annualIncome() -> Double    
+    func annualIncome() -> Double
+    func contractInfo() -> String
 }
 
 struct Employee : EmployeeProtocol {
@@ -27,7 +28,7 @@ struct Employee : EmployeeProtocol {
     var monthlyIncome: Double
     var rate: Int
     var employeeVehicle: Vehicle?
-    var contract: Contract?
+    var contract: ContractProtocol?
     
     init(name: String,birthYear:Int,rate: Int = 100,employeeVehicle: Vehicle? = nil) {
         self.name = name;
