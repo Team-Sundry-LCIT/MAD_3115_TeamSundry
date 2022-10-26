@@ -5,7 +5,7 @@
 
 import Foundation
 
-protocol Employee{
+protocol EmployeeProtocol{
     var name: String { get set }
     var birthYear: Int{  get set }
     var age: Int { get set }
@@ -20,7 +20,7 @@ protocol Employee{
     
 }
 
-struct Employee : Employee {
+struct Employee : EmployeeProtocol {
     
     var name: String
     var birthYear: Int
@@ -50,21 +50,12 @@ struct Employee : Employee {
     }
     
     func calculateAge(birthYear: Int) -> Int {
-        /**
-         !!! althoought its the correct way to calculat age !!!
-         
          if birthYear > 0 {
          let date = Date()
          let currentYear = Calendar.current.component(.year, from: date)
          return currentYear - birthYear
          }
-         
-         return 0
-         
-         !!! we replace it with the manual current year set to 2018 to match the test log. !!!
-         */
-        let currentYear = 2018
-        return currentYear - birthYear
+         return 0   
     }
     
     func printData(_ msg :String){
@@ -78,7 +69,7 @@ struct Employee : Employee {
 }
 
 //MARK: - Employee Extension
-extension CustomStringConvertible where Self: Employee {
+extension Employee : CustomStringConvertible {
   var description: String {
       """
       Name: \(name), a \(Self.self) \n
