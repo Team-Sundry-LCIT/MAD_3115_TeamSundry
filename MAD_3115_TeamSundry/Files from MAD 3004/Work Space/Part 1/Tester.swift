@@ -5,6 +5,13 @@
 
 import Foundation
 
+protocol TesterProtocol  {
+    var nbBugs: Int { get set }
+    var gainFactorError: Int { get }
+    
+    func annualIncome() -> Double
+}
+
 class Tester: Employee {
     
     private var _nbBugs: Int=0
