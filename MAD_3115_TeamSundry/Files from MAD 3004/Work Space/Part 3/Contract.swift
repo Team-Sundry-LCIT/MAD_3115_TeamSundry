@@ -10,8 +10,6 @@ protocol ContractProtocol {
 }
 
 protocol EmployeeContract {
-    var contract: ContractProtocol? {get set}
-    
     mutating func signContract(contract : ContractProtocol)
 }
 
