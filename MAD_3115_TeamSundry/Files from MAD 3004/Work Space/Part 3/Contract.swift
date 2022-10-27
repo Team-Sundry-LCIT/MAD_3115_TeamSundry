@@ -29,7 +29,7 @@ extension Employee: EmployeeContract{
 
 extension Tester: EmployeeContract{
     
-    mutating func signContract(contract:   ContractProtocol) {
+    mutating func signContract(contract: ContractProtocol) {
         monthlyIncome = contract.accumulatedSalary()
         self.contract = contract
    }
@@ -41,7 +41,7 @@ extension Tester: EmployeeContract{
 
 extension Programmer: EmployeeContract{
     
-    mutating func signContract(contract:   ContractProtocol) {
+    mutating func signContract(contract: ContractProtocol) {
         monthlyIncome = contract.accumulatedSalary()
          self.contract = contract
    }
@@ -53,7 +53,7 @@ extension Programmer: EmployeeContract{
 
 extension Manager: EmployeeContract{
 
-    mutating func signContract(contract:   ContractProtocol) {
+    mutating func signContract(contract: ContractProtocol) {
         monthlyIncome = contract.accumulatedSalary()
          self.contract = contract
    }
