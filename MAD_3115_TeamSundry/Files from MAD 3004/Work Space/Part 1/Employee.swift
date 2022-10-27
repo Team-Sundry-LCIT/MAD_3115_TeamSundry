@@ -20,7 +20,7 @@ protocol EmployeeProtocol{
     func contractInfo() -> String
 }
 
-struct Employee : EmployeeProtocol {
+struct Employee : EmployeeProtocol, EmployeeContract {
     
     var name: String
     var birthYear: Int

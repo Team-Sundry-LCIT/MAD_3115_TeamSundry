@@ -10,36 +10,16 @@ protocol ContractProtocol {
 }
 
 protocol EmployeeContract : EmployeeProtocol{
-    mutating func signContract(contract :   ContractProtocol)
+    mutating func signContract(contract : ContractProtocol)
 }
 
 extension EmployeeContract {
-    mutating func signContract(contract:   ContractProtocol) {
+    mutating func signContract(contract: ContractProtocol) {
         monthlyIncome = contract.accumulatedSalary()
         self.contract = contract
    }
-}
-
-extension Employee: EmployeeContract{
+    
     func contractInfo() -> String {
-        return "\(name)"
-    }
-}
-
-extension Tester: EmployeeContract{
-    func contractInfo() -> String {
-        return "\(name) is a tester."
-    }
-}
-
-extension Programmer: EmployeeContract{
-    func contractInfo() -> String {
-        return "\(name) is a programmer."
-    }
-}
-
-extension Manager: EmployeeContract{
-    func contractInfo() -> String {
-        return "\(name) is a manager."        
+        return "\(name) is a \(Self.self) \n"
     }
 }

@@ -7,10 +7,10 @@ import Foundation
 
 protocol TesterProtocol  {
     var nbBugs: Int { get set }
-    let gainFactorError: Int { get }
+    var gainFactorError: Int { get }
 }
 
-struct Tester: TesterProtocol, EmployeeProtocol {    
+struct Tester: TesterProtocol, EmployeeProtocol, EmployeeContract {    
   
     var name: String
     var birthYear: Int
@@ -20,7 +20,15 @@ struct Tester: TesterProtocol, EmployeeProtocol {
     var employeeVehicle: Vehicle?
     var contract: ContractProtocol?
     var nbBugs: Int = 0
-    let GainFactorError = 10
+    let gainFactorError = 10
+    
+    var description: String {
+        let text = """
+         and corrected \(nbBugs) bugs.
+        His/Her estimated annual income is \(annualIncome())
+        """
+        return text
+    }
     
     init(name: String, birthYear: Int,nbBugs: Int,rate:Int=100,employeeVehicle: Vehicle?=nil){
         self.name = name
@@ -35,27 +43,12 @@ struct Tester: TesterProtocol, EmployeeProtocol {
     
      func annualIncome() -> Double {
         let baseYearlyIncome = (monthlyIncome * Double(12)) * Double(rate)/100
-        let bonus = Double(_GainFactorError * nbBugs)
+        let bonus = Double(gainFactorError * nbBugs)
         return baseYearlyIncome + bonus
     }
     
     func printData(_ msg :String){
         print(msg)
-    }
-}
-
-extension Tester {
-    var description: String {
-        let a =
-        """
-        Name: \(name), a Tester \n
-        """
-        
-        let b = """
-         and corrected \(nbBugs) bugs.
-        His/Her estimated annual income is \(annualIncome())
-        """
-        return a + b
     }
 }
 
