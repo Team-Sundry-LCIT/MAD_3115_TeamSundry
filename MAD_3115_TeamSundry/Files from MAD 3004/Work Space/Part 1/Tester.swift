@@ -5,45 +5,50 @@
 
 import Foundation
 
-class Tester: Employee {
-    
-    private var _nbBugs: Int=0
-    private let _GainFactorError = 10
-    
-    var nbBugs: Int {
-        get { return _nbBugs }
-        set { _nbBugs = newValue }
-    }
-    
-    func printMessage() {
-        printData("We have a new employee: \(name), a tester")
-    }
-    
-    init(name: String, birthYear: Int,nbBugs: Int,rate:Int=100, employeeVehicle: Vehicle?=nil) {
-        super.init(name: name, birthYear: birthYear, rate: rate,employeeVehicle: employeeVehicle)
-        self.nbBugs = nbBugs;
-        printMessage()
-    }
-    
-    override func annualIncome() -> Double {
-        let baseYearlyIncome = (monthlyIncome * Double(12)) * Double(rate)/100
-        let bonus = Double(_GainFactorError * nbBugs)
-        return baseYearlyIncome + bonus
-    }
+protocol TesterProtocol  {
+    var nbBugs: Int { get set }
+    var gainFactorError: Int { get }
 }
 
-extension Tester {
-    override var description: String {
-//        let a =
-//        """
-//        Name: \(name), a Tester \n
-//        """
-        
-        let b = """
+struct Tester: TesterProtocol, EmployeeProtocol, EmployeeContract {    
+  
+    var name: String
+    var birthYear: Int
+    var age: Int
+    var monthlyIncome: Double
+    var rate: Int
+    var employeeVehicle: Vehicle?
+    var contract: ContractProtocol?
+    var nbBugs: Int = 0
+    let gainFactorError = 10
+    
+    var description: String {
+        let text = """
          and corrected \(nbBugs) bugs.
         His/Her estimated annual income is \(annualIncome())
         """
-        return   super.description + b
+        return text
+    }
+    
+    init(name: String, birthYear: Int,nbBugs: Int,rate:Int=100,employeeVehicle: Vehicle?=nil){
+        self.name = name
+        self.birthYear = birthYear
+        self.rate = rate
+        self.nbBugs = nbBugs
+        self.employeeVehicle = employeeVehicle
+        self.age = 0
+        self.monthlyIncome = 0;
+        printData(description)
+    }
+    
+     func annualIncome() -> Double {
+        let baseYearlyIncome = (monthlyIncome * Double(12)) * Double(rate)/100
+        let bonus = Double(gainFactorError * nbBugs)
+        return baseYearlyIncome + bonus
+    }
+    
+    func printData(_ msg :String){
+        print(msg)
     }
 }
 

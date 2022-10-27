@@ -5,38 +5,21 @@
 
 import Foundation
 
-class Contract: CustomStringConvertible {
-    var description: String {
-        return ""
-    }
-    
-    func accumulatedSalary() -> Double {
-        return 0.0
-    }
+protocol ContractProtocol {
+    func accumulatedSalary() -> Double
 }
 
-protocol EmployeeContract {
-    var contract : Contract? { get set }
-    
-    func signContract(contract : Contract)
-    func contractInfo() -> String
+protocol EmployeeContract : EmployeeProtocol{
+    mutating func signContract(contract : ContractProtocol)
 }
 
-extension Employee : EmployeeContract {
-    func signContract(contract: Contract) {
+extension EmployeeContract {
+    mutating func signContract(contract: ContractProtocol) {
         monthlyIncome = contract.accumulatedSalary()
         self.contract = contract
-    }
+   }
     
     func contractInfo() -> String {
-        if type(of: self) == Manager.self {
-            return "\(name) is a manager."
-        } else if type(of: self) == Programmer.self {
-            return "\(name) is a programmer."
-        } else if type(of: self) == Tester.self {
-            return "\(name) is a tester."
-        }
-        
-        return "\(name)"
+        return "\(name) is a \(Self.self) \n"
     }
 }
