@@ -5,46 +5,35 @@
 
 import Foundation
 
-class Vehicle {
+protocol VehicleProtocol{
+    var make:String { get set }
+    var plate:String { get set }
+    var color:String { get set }
+    var category:String { get set }
+}
+
+struct Vehicle : VehicleProtocol {
     
     //defining the variables
-    private var _make: String = ""
-    private var _plate: String = ""
-    private var _color: String = ""
-    private var _category: String = ""
-    
-    //defining setter & getter
-    var make:String{
-        get{return _make}
-        set{ _make = newValue }
-    }
-    var plate:String{
-        get{return _plate}
-        set{ _plate = newValue }
-    }
-    var color:String{
-        get{return _color}
-        set{ _color = newValue }
-    }
-    var category:String{
-        get{return _category}
-        set{ _category = newValue }
-    }
+    var make:String
+    var plate:String
+    var color:String
+    var category:String
     
     //empty initialization
     init(){
-        self._make = ""
-        self._plate = ""
-        self._color = ""
-        self._category = ""
+        self.make = ""
+        self.plate = ""
+        self.color = ""
+        self.category = ""
     }
     
     //initialisation as per test case
     init(_make: String, _plate: String, _color: String, _category: String) {
-        self._make = _make
-        self._plate = _plate
-        self._color = _color
-        self._category = _category
+        self.make = _make
+        self.plate = _plate
+        self.color = _color
+        self.category = _category
     }
     
 }
