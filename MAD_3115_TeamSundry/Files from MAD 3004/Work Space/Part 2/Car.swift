@@ -5,32 +5,17 @@
 
 import Foundation
 
-class Car: Vehicle {
-    //defining variable
-    private var _gear:String = ""
-    private var _type:String = ""
-    
-    //getter and setter methods
-    var gear:String{
-        get{return _gear}
-        set{_gear = newValue}
-    }
-    
-    var type:String{
-        get{return _type}
-        set{_type = newValue}
-    }
-    
-    //initialisation
-    init(make:String,plate:String,color:String,category:String,gear:String,type:String){
-        super.init(_make :make,_plate :plate,_color :color,_category :category)
-        self._gear = gear
-        self._type = type
-    }
+protocol CarProtocol{
+    var gear:String { get set }
+    var type:String { get set }
 }
 
-extension Car {
-    override var description: String {
+struct Car: CarProtocol, VehicleProtocol {
+    //defining variable
+    var gear:String
+    var type:String
+    
+    var description: String {
         let a = """
         Employee has a car\n
         """
@@ -40,7 +25,19 @@ extension Car {
         \t- type: \(type)
         """
         
-        return a + super.description + b
+        return a +
+//        super.description +
+        b
+    }
+    
+    //initialisation
+    init(make:String,plate:String,color:String,category:String,gear:String,type:String){
+        self.make = make
+        self.plate = plate
+        self.color = color
+        self.category = category
+        self.gear = gear
+        self.type = type
     }
 }
 
