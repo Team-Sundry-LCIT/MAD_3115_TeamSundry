@@ -10,12 +10,12 @@ protocol TemporaryProtocol {
     var accumulatedHours:Int { get set }
 }
 
-struct Temporary:ContractProtocol, CustomStringConvertible {
+struct Temporary: ContractProtocol, CustomStringConvertible {
     
-    private var hourlySalary:Int=0
-    private var accumulatedHours:Int=0
+    var hourlySalary: Int = 0
+    var accumulatedHours: Int = 0
     
-    init(hourlySalary:Int, accumulatedHours:Int){
+    init(hourlySalary: Int, accumulatedHours: Int){
         self.hourlySalary = hourlySalary
         self.accumulatedHours = accumulatedHours
     }
