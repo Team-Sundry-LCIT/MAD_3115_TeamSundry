@@ -12,6 +12,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // No need for semicolon
+         navigationController?.navigationBar.prefersLargeTitles = true
+    }
 
 }
 
