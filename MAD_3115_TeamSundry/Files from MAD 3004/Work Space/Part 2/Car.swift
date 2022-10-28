@@ -25,7 +25,9 @@ struct Car: CarProtocol, VehicleProtocol {
         \t- type: \(type)
         """
         
-        return a + super.description + b
+        return a +
+//        super.description +
+        b
     }
     
     //initialisation

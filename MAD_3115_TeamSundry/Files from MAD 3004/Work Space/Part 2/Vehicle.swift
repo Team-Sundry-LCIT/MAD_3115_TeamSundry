@@ -40,14 +40,13 @@ struct Vehicle : VehicleProtocol {
 
 //MARK: Vehicle Extension
 extension Vehicle : CustomStringConvertible {
-    @objc var description: String {
-        let a = """
+    var description: String {
+        """
         \t- make: \(make)
         \t- plate: \(plate)
         \t- colour: \(color)
         \t- category: \(category)
         """
-        return a
     }
 }
 
