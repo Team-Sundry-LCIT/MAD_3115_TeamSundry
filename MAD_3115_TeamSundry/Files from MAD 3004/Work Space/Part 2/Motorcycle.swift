@@ -5,24 +5,26 @@
 
 import Foundation
 
-class Motorcycle: Vehicle {
+protocol MotorcycleProtocol {
+    var sidecar: Bool { get set }
+}
+
+struct Motorcycle: MotorcycleProtocol, VehicleProtocol {
     //defining variable
-    private var _sidecar:Bool = false
+    var sidecar: Bool = false
     
     //initialisations
-    init(make:String, plate:String, color:String ,category:String ,sidecar:Bool = false){
-        super.init(_make:make,_plate:plate,_color:color ,_category:category)
-        self._sidecar=sidecar
-    }
-    
-    var sidecar:Bool{
-        get{return _sidecar}
-        set{_sidecar=newValue}
+    init(make: String, plate: String, color:  String, category: String, sidecar: Bool = false){
+        self.make = make
+        self.plate = plate
+        self.color = color
+        self.category = category
+        self.sidecar = sidecar
     }
 }
 
-extension Motorcycle {
-    override var description: String {
+extension Motorcycle: CustomStringConvertible {
+    var description: String {
         let a = """
         Employee has a motorcycle\n
         """
@@ -30,7 +32,6 @@ extension Motorcycle {
         let b = """
         \n\t- \(sidecar ? "with" : "without") sidecar
         """
-        return a + super.description + b
+        return a + b
     }
 }
-
