@@ -11,7 +11,7 @@
         <!--Hi-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MAD_3115_TeamSundry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EmployeeListViewController" customModule="MAD_3115_TeamSundry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                     <navigationItem key="navigationItem" title="Hi" largeTitleDisplayMode="always" id="WP4-he-0Uo">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="HdX-aX-EWl">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Qml-Md-qdC">
-                                <rect key="frame" x="-37" y="-17" width="86" height="33"/>
+                                <rect key="frame" x="269.33333333333331" y="5" width="104.66666666666669" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.down.on.square" catalog="system" title="Button"/>

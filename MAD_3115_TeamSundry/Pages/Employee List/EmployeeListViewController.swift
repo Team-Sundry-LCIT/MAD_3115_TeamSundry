@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EmployeeListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

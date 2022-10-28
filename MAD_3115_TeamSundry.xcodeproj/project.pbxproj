@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990E10AD290C822000B9238F /* EmployeeDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990E10AC290C822000B9238F /* EmployeeDetails.storyboard */; };
+		990E10AF290C823B00B9238F /* RegisterForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990E10AE290C823B00B9238F /* RegisterForm.storyboard */; };
+		990E10B1290C829400B9238F /* EmployeeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E10B0290C829400B9238F /* EmployeeDetailsViewController.swift */; };
+		990E10B3290C82A700B9238F /* RegisterFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E10B2290C82A700B9238F /* RegisterFormViewController.swift */; };
 		999DB8032908869400D4AD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8022908869400D4AD0A /* AppDelegate.swift */; };
 		999DB8052908869400D4AD0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8042908869400D4AD0A /* SceneDelegate.swift */; };
-		999DB8072908869400D4AD0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8062908869400D4AD0A /* ViewController.swift */; };
-		999DB80A2908869400D4AD0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999DB8082908869400D4AD0A /* Main.storyboard */; };
+		999DB8072908869400D4AD0A /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8062908869400D4AD0A /* EmployeeListViewController.swift */; };
+		999DB80A2908869400D4AD0A /* EmployeeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999DB8082908869400D4AD0A /* EmployeeList.storyboard */; };
 		999DB80C2908869600D4AD0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999DB80B2908869600D4AD0A /* Assets.xcassets */; };
 		999DB80F2908869600D4AD0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999DB80D2908869600D4AD0A /* LaunchScreen.storyboard */; };
 		999DB81A2908869600D4AD0A /* MAD_3115_TeamSundryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8192908869600D4AD0A /* MAD_3115_TeamSundryTests.swift */; };
@@ -39,11 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		990E10AC290C822000B9238F /* EmployeeDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeDetails.storyboard; sourceTree = "<group>"; };
+		990E10AE290C823B00B9238F /* RegisterForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterForm.storyboard; sourceTree = "<group>"; };
+		990E10B0290C829400B9238F /* EmployeeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewController.swift; sourceTree = "<group>"; };
+		990E10B2290C82A700B9238F /* RegisterFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormViewController.swift; sourceTree = "<group>"; };
 		999DB7FF2908869400D4AD0A /* MAD_3115_TeamSundry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAD_3115_TeamSundry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		999DB8022908869400D4AD0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		999DB8042908869400D4AD0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		999DB8062908869400D4AD0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		999DB8092908869400D4AD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		999DB8062908869400D4AD0A /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
+		999DB8092908869400D4AD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EmployeeList.storyboard; sourceTree = "<group>"; };
 		999DB80B2908869600D4AD0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		999DB80E2908869600D4AD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		999DB8102908869600D4AD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +90,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		990E10B4290C82FE00B9238F /* Employee List */ = {
+			isa = PBXGroup;
+			children = (
+				999DB8062908869400D4AD0A /* EmployeeListViewController.swift */,
+				999DB8082908869400D4AD0A /* EmployeeList.storyboard */,
+			);
+			path = "Employee List";
+			sourceTree = "<group>";
+		};
+		990E10B5290C830E00B9238F /* Employee Details */ = {
+			isa = PBXGroup;
+			children = (
+				990E10B0290C829400B9238F /* EmployeeDetailsViewController.swift */,
+				990E10AC290C822000B9238F /* EmployeeDetails.storyboard */,
+			);
+			path = "Employee Details";
+			sourceTree = "<group>";
+		};
+		990E10B6290C832200B9238F /* Register Form */ = {
+			isa = PBXGroup;
+			children = (
+				990E10B2290C82A700B9238F /* RegisterFormViewController.swift */,
+				990E10AE290C823B00B9238F /* RegisterForm.storyboard */,
+			);
+			path = "Register Form";
+			sourceTree = "<group>";
+		};
 		999DB7F62908869400D4AD0A = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +142,7 @@
 			children = (
 				999DB8382908882200D4AD0A /* Files from MAD 3004 */,
 				999DB8352908876900D4AD0A /* Images & Assets */,
-				999DB834290886DD00D4AD0A /* ViewControllers */,
+				999DB834290886DD00D4AD0A /* Pages */,
 				999DB832290886B600D4AD0A /* Storyboards */,
 				999DB8022908869400D4AD0A /* AppDelegate.swift */,
 				999DB8042908869400D4AD0A /* SceneDelegate.swift */,
@@ -136,18 +171,19 @@
 		999DB832290886B600D4AD0A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				999DB8082908869400D4AD0A /* Main.storyboard */,
 				999DB80D2908869600D4AD0A /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		999DB834290886DD00D4AD0A /* ViewControllers */ = {
+		999DB834290886DD00D4AD0A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				999DB8062908869400D4AD0A /* ViewController.swift */,
+				990E10B6290C832200B9238F /* Register Form */,
+				990E10B5290C830E00B9238F /* Employee Details */,
+				990E10B4290C82FE00B9238F /* Employee List */,
 			);
-			path = ViewControllers;
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		999DB8352908876900D4AD0A /* Images & Assets */ = {
@@ -276,8 +312,10 @@
 				999DB83C2908884800D4AD0A /* Test Files in Resources */,
 				999DB8372908879A00D4AD0A /* Images.xcassets in Resources */,
 				999DB83B2908884800D4AD0A /* Work Space in Resources */,
+				990E10AD290C822000B9238F /* EmployeeDetails.storyboard in Resources */,
 				999DB80C2908869600D4AD0A /* Assets.xcassets in Resources */,
-				999DB80A2908869400D4AD0A /* Main.storyboard in Resources */,
+				999DB80A2908869400D4AD0A /* EmployeeList.storyboard in Resources */,
+				990E10AF290C823B00B9238F /* RegisterForm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,9 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999DB8072908869400D4AD0A /* ViewController.swift in Sources */,
+				999DB8072908869400D4AD0A /* EmployeeListViewController.swift in Sources */,
 				999DB8032908869400D4AD0A /* AppDelegate.swift in Sources */,
+				990E10B3290C82A700B9238F /* RegisterFormViewController.swift in Sources */,
 				999DB8052908869400D4AD0A /* SceneDelegate.swift in Sources */,
+				990E10B1290C829400B9238F /* EmployeeDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,12 +381,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		999DB8082908869400D4AD0A /* Main.storyboard */ = {
+		999DB8082908869400D4AD0A /* EmployeeList.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				999DB8092908869400D4AD0A /* Base */,
 			);
-			name = Main.storyboard;
+			name = EmployeeList.storyboard;
 			sourceTree = "<group>";
 		};
 		999DB80D2908869600D4AD0A /* LaunchScreen.storyboard */ = {
@@ -485,7 +525,7 @@
 				INFOPLIST_FILE = MAD_3115_TeamSundry/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = EmployeeList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,7 +552,7 @@
 				INFOPLIST_FILE = MAD_3115_TeamSundry/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = EmployeeList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
