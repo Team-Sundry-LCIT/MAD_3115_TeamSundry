@@ -13,7 +13,7 @@ protocol PermanentProtocol  {
     
 }
 
-struct Permanent: PermanentProtocol {
+struct Permanent: PermanentProtocol, ContractProtocol {
     
     var nbChildren: Int = 0
     var married: Bool = false
