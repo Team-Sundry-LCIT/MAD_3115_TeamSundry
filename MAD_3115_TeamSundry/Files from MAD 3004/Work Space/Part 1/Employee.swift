@@ -11,7 +11,7 @@ protocol EmployeeProtocol{
     var age: Int { get set }
     var monthlyIncome: Double { get set }
     var rate: Int { get set }
-    var employeeVehicle: Vehicle? {get}
+    var employeeVehicle: VehicleProtocol? {get}
     var contract: ContractProtocol? { get set }
     
     func calculateAge(birthYear: Int) -> Int
@@ -27,10 +27,10 @@ struct Employee : EmployeeProtocol, EmployeeContract {
     var age: Int
     var monthlyIncome: Double
     var rate: Int
-    var employeeVehicle: Vehicle?
+    var employeeVehicle: VehicleProtocol?
     var contract: ContractProtocol?
     
-    init(name: String,birthYear:Int,rate: Int = 100,employeeVehicle: Vehicle? = nil) {
+    init(name: String,birthYear:Int,rate: Int = 100,employeeVehicle: VehicleProtocol? = nil) {
         self.name = name;
         self.birthYear = birthYear;
         self.age = 0

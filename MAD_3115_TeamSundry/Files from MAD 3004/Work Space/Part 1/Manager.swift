@@ -18,7 +18,7 @@ struct Manager: ManagerProtocol, EmployeeProtocol, EmployeeContract {
     var age: Int
     var monthlyIncome: Double
     var rate: Int
-    var employeeVehicle: Vehicle?
+    var employeeVehicle: VehicleProtocol?
     var contract: ContractProtocol?
     
     var nbClients: Int
@@ -35,7 +35,7 @@ struct Manager: ManagerProtocol, EmployeeProtocol, EmployeeContract {
         return text
     }
     
-    init(name: String, birthYear: Int, nbClients: Int, nbTravelDays: Int, rate: Int = 100, employeeVehicle: Vehicle? = nil) {
+    init(name: String, birthYear: Int, nbClients: Int, nbTravelDays: Int, rate: Int = 100, employeeVehicle: VehicleProtocol? = nil) {
         self.name = name
         self.birthYear = birthYear
         self.age = 0

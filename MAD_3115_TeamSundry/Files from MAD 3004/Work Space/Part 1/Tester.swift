@@ -17,7 +17,7 @@ struct Tester: TesterProtocol, EmployeeProtocol, EmployeeContract {
     var age: Int
     var monthlyIncome: Double
     var rate: Int
-    var employeeVehicle: Vehicle?
+    var employeeVehicle: VehicleProtocol?
     var contract: ContractProtocol?
     var nbBugs: Int = 0
     let gainFactorError = 10
@@ -30,7 +30,7 @@ struct Tester: TesterProtocol, EmployeeProtocol, EmployeeContract {
         return text
     }
     
-    init(name: String, birthYear: Int,nbBugs: Int,rate:Int=100,employeeVehicle: Vehicle?=nil){
+    init(name: String, birthYear: Int,nbBugs: Int,rate:Int=100,employeeVehicle: VehicleProtocol?=nil){
         self.name = name
         self.birthYear = birthYear
         self.rate = rate
