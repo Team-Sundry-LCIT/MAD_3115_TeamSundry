@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate {
-
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var birthYearTextField: UITextField!
@@ -21,6 +21,18 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var noOfTypesForEmployeeStepper: UIStepper!
     @IBOutlet weak var employeeTypePicker: UIPickerView!
     
+    @IBOutlet weak var carButton: UIButton!
+    @IBOutlet weak var motorbikeButton: UIButton!
+    @IBOutlet weak var sideCarYesButton: UIButton!
+    @IBOutlet weak var sideCarNoButton: UIButton!
+    @IBOutlet weak var sideCarStackView: UIStackView!
+    @IBOutlet weak var carTypeTextfield: UITextField!
+    @IBOutlet weak var carTypeStackView: UIStackView!
+    @IBOutlet weak var vehicleModelTextField: UITextField!
+    @IBOutlet weak var plateNumberTextField: UITextField!
+    @IBOutlet weak var vehicleColorTextField: UITextField!
+    @IBOutlet weak var vehicleColorPickerView: UIPickerView!
+    
     var employeeType : [String] = ["Programmer", "Manager", "Tester"]
     var selectedEmployeeType : String = ""
     
@@ -32,13 +44,24 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         selectedEmployeeType = self.employeeType[0]
         employeeTypeChanged()
     }
-
+    
+    // MARK: - @IBAction
+    
     @IBAction func noOfTypeCountChange(_ sender: UIStepper) {
         noOfTypesForEmployeeTextField.text = Int(noOfTypesForEmployeeStepper.value).description
     }
     
     @IBAction func dismissKeyBoard(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
+    }
+    
+    @IBAction func registerAction(_ sender: Any) {
+    }
+    
+    @IBAction func vehicleTypeSelectAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func sideCarSelectAction(_ sender: UIButton) {
     }
     
     // MARK: - TextField Delegate
@@ -56,11 +79,11 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return employeeType.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return employeeType[row]
     }
@@ -69,7 +92,7 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         selectedEmployeeType = employeeType[row] // selected item
         self.employeeTypeChanged()
     }
-
+    
     private func employeeTypeChanged(){
         self.employeeTypePicker.isHidden = true
         self.employeeTypeTextField.text = selectedEmployeeType
@@ -87,15 +110,4 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
             self.noOfTypesForEmployeeTextField.isHidden = true
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

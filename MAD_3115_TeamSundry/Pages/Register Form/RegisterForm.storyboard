@@ -272,6 +272,9 @@
                                                                 <buttonConfiguration key="configuration" style="plain" image="Radio_Selected" title="Car" imagePadding="15">
                                                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="vehicleTypeSelectAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ebP-qn-ZCQ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-fa-5D2">
                                                                 <rect key="frame" x="210" y="0.0" width="140" height="35"/>
@@ -283,6 +286,9 @@
                                                                 <buttonConfiguration key="configuration" style="plain" image="Radio_Unselect" title="Motorbike" imagePadding="15">
                                                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="vehicleTypeSelectAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IS3-AX-ymR"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -296,75 +302,91 @@
                                                             <constraint firstAttribute="height" constant="1" id="usJ-bX-tX8"/>
                                                         </constraints>
                                                     </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zw-Hg-ufu">
-                                                        <rect key="frame" x="0.0" y="624" width="350" height="35"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rpI-y0-ca8">
+                                                        <rect key="frame" x="0.0" y="624" width="350" height="46"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sidecar :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-8q-c7L">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5A-WN-37s">
-                                                                <rect key="frame" x="70" y="0.0" width="140" height="35"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zw-Hg-ufu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="35"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sidecar :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-8q-c7L">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5A-WN-37s">
+                                                                        <rect key="frame" x="70" y="0.0" width="140" height="35"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="140" id="EOV-Bz-UoD"/>
+                                                                        </constraints>
+                                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" image="Radio_Selected" title="Yes" imagePadding="15">
+                                                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="sideCarSelectAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oQi-p0-15X"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXn-Fq-2qk">
+                                                                        <rect key="frame" x="210" y="0.0" width="140" height="35"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="140" id="hJc-vA-MUX"/>
+                                                                        </constraints>
+                                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" image="Radio_Unselect" title="No" imagePadding="15">
+                                                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="sideCarSelectAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LbZ-LP-uAy"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="140" id="EOV-Bz-UoD"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="ffK-CE-5bh"/>
                                                                 </constraints>
-                                                                <color key="tintColor" systemColor="labelColor"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="Radio_Selected" title="Yes" imagePadding="15">
-                                                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                                                </buttonConfiguration>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXn-Fq-2qk">
-                                                                <rect key="frame" x="210" y="0.0" width="140" height="35"/>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKo-Hp-NFG">
+                                                                <rect key="frame" x="0.0" y="45" width="350" height="1"/>
+                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="140" id="hJc-vA-MUX"/>
+                                                                    <constraint firstAttribute="height" constant="1" id="Ha3-mC-pAC"/>
                                                                 </constraints>
-                                                                <color key="tintColor" systemColor="labelColor"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="Radio_Unselect" title="No" imagePadding="15">
-                                                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                                                </buttonConfiguration>
-                                                            </button>
+                                                            </view>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="ffK-CE-5bh"/>
-                                                        </constraints>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKo-Hp-NFG">
-                                                        <rect key="frame" x="0.0" y="669" width="350" height="1"/>
-                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="Ha3-mC-pAC"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="38G-Wf-MU1">
-                                                        <rect key="frame" x="0.0" y="680" width="350" height="35"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qxC-Qc-dad">
+                                                        <rect key="frame" x="0.0" y="680" width="350" height="46"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm2-Wr-HsG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Car Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INN-Wq-DXy">
-                                                                <rect key="frame" x="180" y="0.0" width="170" height="35"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="38G-Wf-MU1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="35"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm2-Wr-HsG">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Car Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INN-Wq-DXy">
+                                                                        <rect key="frame" x="180" y="0.0" width="170" height="35"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="dgz-yp-qlb"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gax-rZ-BEF">
+                                                                <rect key="frame" x="0.0" y="45" width="350" height="1"/>
+                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="oDT-kw-G1N"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="dgz-yp-qlb"/>
-                                                        </constraints>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gax-rZ-BEF">
-                                                        <rect key="frame" x="0.0" y="725" width="350" height="1"/>
-                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="oDT-kw-G1N"/>
-                                                        </constraints>
-                                                    </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hy0-Iu-Egy">
                                                         <rect key="frame" x="0.0" y="736" width="350" height="35"/>
                                                         <subviews>
@@ -500,6 +522,9 @@
                                         <integer key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4pH-DC-2qd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -516,16 +541,27 @@
                     <navigationItem key="navigationItem" title="Registration Form" id="Hv5-E0-Ica"/>
                     <connections>
                         <outlet property="birthYearTextField" destination="cAH-20-dDh" id="M8g-aJ-CUf"/>
+                        <outlet property="carButton" destination="Xzp-CY-whi" id="kF5-G4-TbP"/>
+                        <outlet property="carTypeStackView" destination="qxC-Qc-dad" id="RbS-7a-wvr"/>
+                        <outlet property="carTypeTextfield" destination="INN-Wq-DXy" id="715-BZ-h2C"/>
                         <outlet property="employeeIDTextField" destination="WZV-j0-cWb" id="yb9-3v-kAo"/>
                         <outlet property="employeeTypePicker" destination="fVb-Ku-shW" id="up8-SL-Chg"/>
                         <outlet property="employeeTypeTextField" destination="g8f-5V-Vfi" id="JOj-c8-HiP"/>
                         <outlet property="firstNameTextField" destination="fDk-gJ-A9U" id="HfZ-zm-APa"/>
                         <outlet property="lastNameTextField" destination="qNg-In-eWy" id="SrO-j8-R9c"/>
                         <outlet property="monthlySalaryTextField" destination="MTx-3x-2xn" id="gX2-8Q-foi"/>
+                        <outlet property="motorbikeButton" destination="yKK-fa-5D2" id="oLZ-8s-fzx"/>
                         <outlet property="noOfTypesForEmployeeLabel" destination="Tve-up-8wr" id="YKG-Ca-DGx"/>
                         <outlet property="noOfTypesForEmployeeStepper" destination="1sn-03-C1u" id="gp2-X9-jLS"/>
                         <outlet property="noOfTypesForEmployeeTextField" destination="4wm-JD-gFg" id="zFZ-34-1mn"/>
                         <outlet property="occupationRateTextField" destination="UAL-iO-ANW" id="0O9-eF-RpU"/>
+                        <outlet property="plateNumberTextField" destination="KSz-z7-IPi" id="31I-az-lhQ"/>
+                        <outlet property="sideCarNoButton" destination="zXn-Fq-2qk" id="cMi-iC-Afb"/>
+                        <outlet property="sideCarStackView" destination="rpI-y0-ca8" id="j1M-55-D0l"/>
+                        <outlet property="sideCarYesButton" destination="Z5A-WN-37s" id="fAc-sA-QGD"/>
+                        <outlet property="vehicleColorPickerView" destination="rxm-gw-LcO" id="IKD-K9-e1L"/>
+                        <outlet property="vehicleColorTextField" destination="rbr-Qt-5ik" id="Yg5-FF-7Kd"/>
+                        <outlet property="vehicleModelTextField" destination="1Ch-QA-TK1" id="aQK-wc-4rq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
