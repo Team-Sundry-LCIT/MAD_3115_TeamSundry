@@ -9,11 +9,11 @@ import UIKit
 
 class EmployeeDetailsViewController: UIViewController {
 
-    @IBOutlet weak var tvName: UILabel!
+    @IBOutlet weak var nameLbl: UILabel!
     
-    @IBOutlet weak var tvType: UILabel!
+    @IBOutlet weak var typeLbl: UILabel!
     
-    @IBOutlet weak var tvData: UILabel!
+    @IBOutlet weak var dataLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +36,10 @@ class EmployeeDetailsViewController: UIViewController {
         
         let a = ""
         
-        tvName.text = "Tilak Acharya"
-        tvType.text = "An Android Developer"
+        nameLbl.text = "Tilak Acharya"
+        typeLbl.text = "An Android Developer"
         
-        tvData.text = """
+        dataLbl.text = """
         Name: \(a), a \(a)
         Age : \(a)
         

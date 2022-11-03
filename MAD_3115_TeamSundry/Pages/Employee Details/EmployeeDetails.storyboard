@@ -106,9 +106,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tvData" destination="Bi4-0T-LB8" id="GKd-Rj-PtN"/>
-                        <outlet property="tvName" destination="cru-g3-c4R" id="6tU-41-OQU"/>
-                        <outlet property="tvType" destination="3WV-K4-3n4" id="Dc7-Zg-pPw"/>
+                        <outlet property="dataLbl" destination="Bi4-0T-LB8" id="Idi-Sg-4iR"/>
+                        <outlet property="nameLbl" destination="cru-g3-c4R" id="jWs-L3-T2B"/>
+                        <outlet property="typeLbl" destination="3WV-K4-3n4" id="HMH-kD-FFr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -118,7 +118,7 @@
     </scenes>
     <resources>
         <image name=" bg_emp_detail" width="393" height="812"/>
-        <image name="avatar" width="95" height="97"/>
+        <image name="avatar" width="112" height="112"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
