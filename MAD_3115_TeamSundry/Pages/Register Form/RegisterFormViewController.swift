@@ -36,6 +36,9 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     var employeeType : [String] = ["Programmer", "Manager", "Tester"]
     var selectedEmployeeType : String = ""
     
+    var vehicleColor: [String] = ["Red", "Blue", "Yellow", "Green","Orange","Purple","Pink", "Brown", "White", "Black", "Beige"]
+    var selectedVehicleColor = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         noOfTypesForEmployeeStepper.wraps = true
@@ -43,6 +46,10 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         employeeTypeTextField.inputView = employeeTypePicker
         selectedEmployeeType = self.employeeType[0]
         employeeTypeChanged()
+        
+        vehicleColorTextField.inputView = vehicleColorPickerView
+        selectedVehicleColor = vehicleColor[0]
+        vehicleColorChanged()
     }
     
     // MARK: - @IBAction
@@ -70,6 +77,9 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         if textField == self.employeeTypeTextField {
             self.employeeTypePicker.isHidden = false
             return false
+        } else if textField == self.vehicleColorTextField {
+            self.vehicleColorPickerView.isHidden = false
+            return false
         }
         return true
     }
@@ -81,16 +91,33 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return employeeType.count
+        if pickerView == employeeTypePicker {
+            return employeeType.count
+        } else if pickerView == vehicleColorPickerView {
+            return vehicleColor.count
+        }
+        
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return employeeType[row]
+        if pickerView == employeeTypePicker {
+            return employeeType[row]
+        } else if pickerView == vehicleColorPickerView {
+            return vehicleColor[row]
+        }
+        
+        return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedEmployeeType = employeeType[row] // selected item
-        self.employeeTypeChanged()
+        if pickerView == employeeTypePicker {
+            selectedEmployeeType = employeeType[row] // selected item
+            self.employeeTypeChanged()
+        } else if pickerView == vehicleColorPickerView {
+            selectedVehicleColor = vehicleColor[row] // selected item
+            self.vehicleColorChanged()
+        }
     }
     
     private func employeeTypeChanged(){
@@ -109,5 +136,10 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
             self.noOfTypesForEmployeeLabel.isHidden = true
             self.noOfTypesForEmployeeTextField.isHidden = true
         }
+    }
+    
+    private func vehicleColorChanged(){
+        self.vehicleColorPickerView.isHidden = true
+        self.vehicleColorTextField.text = selectedVehicleColor
     }
 }
