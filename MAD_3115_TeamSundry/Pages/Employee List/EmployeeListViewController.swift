@@ -7,15 +7,52 @@ import UIKit
 
 class EmployeeListViewController: UIViewController {
 
+    
+    @IBOutlet weak var employeesListtableView: UITableView!
+    var employeesList  : [String] = ["Student A", "Student B", "Student C", "Student D", "Student E"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        employeesListtableView.delegate = self
+        employeesListtableView.dataSource = self
         // Do any additional setup after loading the view.
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated) // No need for semicolon
-         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
 }
 
+extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return employeesList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = employeesListtableView.dequeueReusableCell(withIdentifier: "EmployeeCell") as? EmployeeListTableViewCell
+        cell?.nameLabel?.text = employeesList[indexPath.row]
+        cell?.idLabel?.text = "2"
+        cell?.avatarImage?.image = UIImage(systemName: "person.crop.circle")
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        //return indexPath.row % 2 == 0 ? false : true
+        //=> cannot delete row 1,3,5,...
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            
+            employeesList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    
+}
