@@ -141,9 +141,9 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
             return employeeType.count
         } else if pickerView == vehicleColorPickerView {
             return vehicleColor.count
+        } else {
+            return 0
         }
-        
-        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -151,9 +151,9 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
             return employeeType[row]
         } else if pickerView == vehicleColorPickerView {
             return vehicleColor[row]
+        } else {
+            return ""
         }
-        
-        return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
