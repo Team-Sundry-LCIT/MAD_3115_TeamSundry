@@ -9,6 +9,12 @@ import UIKit
 
 class EmployeeDetailsViewController: UIViewController {
 
+    @IBOutlet weak var nameLbl: UILabel!
+    
+    @IBOutlet weak var typeLbl: UILabel!
+    
+    @IBOutlet weak var dataLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,5 +31,30 @@ class EmployeeDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func populateData(){
+        
+        let a = ""
+        
+        nameLbl.text = "Tilak Acharya"
+        typeLbl.text = "An Android Developer"
+        
+        dataLbl.text = """
+        Name: \(a), a \(a)
+        Age : \(a)
+        
+        Employee has a \(a)
+        Model : \(a)
+        Plate : \(a)
+        Color : \(a)
+        With a side car
+        
+        Occupation rate : \(a)
+        Annual Income : \(a)
+        He/She has corrected
+        
+        """
+        
+    }
 
 }
