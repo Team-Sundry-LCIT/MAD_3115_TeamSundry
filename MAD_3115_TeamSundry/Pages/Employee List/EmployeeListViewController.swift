@@ -26,15 +26,18 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return employeesList.count
+        return TableItems.names.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = employeesListtableView.dequeueReusableCell(withIdentifier: "EmployeeCell") as? EmployeeListTableViewCell
-        cell?.nameLabel?.text = employeesList[indexPath.row]
-        cell?.idLabel?.text = "2"
-        cell?.avatarImage?.image = UIImage(systemName: "person.crop.circle")
-        return cell ?? UITableViewCell()
+        if let cell = employeesListtableView.dequeueReusableCell(withIdentifier: "EmployeeCell") as? EmployeeListTableViewCell {
+            cell.nameLabel?.text = TableItems.names[indexPath.row]
+            cell.idLabel?.text = TableItems.ids[indexPath.row]
+            cell.avatarImage?.image = UIImage(named: TableItems.images[indexPath.row])
+            return cell
+        }
+        
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

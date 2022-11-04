@@ -25,6 +25,7 @@
 		999DB83C2908884800D4AD0A /* Test Files in Resources */ = {isa = PBXBuildFile; fileRef = 999DB83A2908884800D4AD0A /* Test Files */; };
 		BD30CAA629158092002E576A /* EmployeeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD30CAA529158092002E576A /* EmployeeListTableViewController.swift */; };
 		BD30CAA8291580FE002E576A /* EmployeeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD30CAA7291580FE002E576A /* EmployeeListTableViewCell.swift */; };
+		BD65EECE29159DB90075EFA9 /* TableItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65EECD29159DB90075EFA9 /* TableItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		999DB83A2908884800D4AD0A /* Test Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Test Files"; sourceTree = "<group>"; };
 		BD30CAA529158092002E576A /* EmployeeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListTableViewController.swift; sourceTree = "<group>"; };
 		BD30CAA7291580FE002E576A /* EmployeeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListTableViewCell.swift; sourceTree = "<group>"; };
+		BD65EECD29159DB90075EFA9 /* TableItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				999DB8082908869400D4AD0A /* EmployeeList.storyboard */,
 				BD30CAA529158092002E576A /* EmployeeListTableViewController.swift */,
 				BD30CAA7291580FE002E576A /* EmployeeListTableViewCell.swift */,
+				BD65EECD29159DB90075EFA9 /* TableItems.swift */,
 			);
 			path = "Employee List";
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				990E10B3290C82A700B9238F /* RegisterFormViewController.swift in Sources */,
 				BD30CAA8291580FE002E576A /* EmployeeListTableViewCell.swift in Sources */,
 				999DB8052908869400D4AD0A /* SceneDelegate.swift in Sources */,
+				BD65EECE29159DB90075EFA9 /* TableItems.swift in Sources */,
 				990E10B1290C829400B9238F /* EmployeeDetailsViewController.swift in Sources */,
 				BD30CAA629158092002E576A /* EmployeeListTableViewController.swift in Sources */,
 			);
