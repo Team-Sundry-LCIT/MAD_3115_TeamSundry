@@ -50,6 +50,20 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         vehicleColorTextField.inputView = vehicleColorPickerView
         selectedVehicleColor = vehicleColor[0]
         vehicleColorChanged()
+        
+        selectdVehicleType(isCar: true)
+        setRadioImageForButton(button: carButton, isSelected: true)
+        setRadioImageForButton(button: motorbikeButton, isSelected: false)
+        setRadioImageForButton(button: sideCarYesButton, isSelected: true)
+        setRadioImageForButton(button: sideCarNoButton, isSelected: false)
+    }
+    
+    func setRadioImageForButton(button: UIButton, isSelected: Bool) {
+        if isSelected {
+            button.setImage(UIImage(named: "Radio_Selected"), for: .normal)
+        } else {
+            button.setImage(UIImage(named: "Radio_Unselect"), for: .normal)
+        }
     }
     
     // MARK: - @IBAction
@@ -66,9 +80,41 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     @IBAction func vehicleTypeSelectAction(_ sender: UIButton) {
+        switch sender {
+        case carButton:
+            setRadioImageForButton(button: carButton, isSelected: true)
+            setRadioImageForButton(button: motorbikeButton, isSelected: false)
+            selectdVehicleType(isCar: true)
+        case motorbikeButton:
+            setRadioImageForButton(button: carButton, isSelected: false)
+            setRadioImageForButton(button: motorbikeButton, isSelected: true)
+            selectdVehicleType(isCar: false)
+        default:
+            break
+        }
     }
     
     @IBAction func sideCarSelectAction(_ sender: UIButton) {
+        switch sender {
+        case sideCarYesButton:
+            setRadioImageForButton(button: sideCarYesButton, isSelected: true)
+            setRadioImageForButton(button: sideCarNoButton, isSelected: false)
+        case sideCarNoButton:
+            setRadioImageForButton(button: sideCarYesButton, isSelected: false)
+            setRadioImageForButton(button: sideCarNoButton, isSelected: true)
+        default:
+            break
+        }
+    }
+    
+    func selectdVehicleType(isCar: Bool) {
+        if isCar {
+            sideCarStackView.isHidden = true
+            carTypeStackView.isHidden = false
+        } else {
+            sideCarStackView.isHidden = false
+            carTypeStackView.isHidden = true
+        }
     }
     
     // MARK: - TextField Delegate
