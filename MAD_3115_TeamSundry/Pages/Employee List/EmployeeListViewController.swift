@@ -22,8 +22,10 @@ class EmployeeListViewController: UIViewController {
 
     @IBAction func addEmployee(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "RegisterForm", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "registerForm")
-        self.present(nextViewController, animated:true, completion:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RegisterFormViewController") as! RegisterFormViewController
+        nextViewController.delegate = self
+        nextViewController.employeeList = self.employeeList
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
 
@@ -63,8 +65,12 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func updateEmployeeList(with newEmployees : EmployeeProtocol){
-        employeeList.append(newEmployees)
+    func updateEmployeeList(with employees : [EmployeeProtocol]){
+        employeeList = employees
+ //       saveEmplooyeeList
+    }
+    
+    func saveEmplooyeeList(){
         defaults.set(employeeList, forKey: "SavedEmployeeList")
     }
     

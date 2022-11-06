@@ -35,13 +35,13 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     var employeeType : [EmployeeType] = [EmployeeType.Programmer, EmployeeType.Manager, EmployeeType.Tester]
     var selectedEmployeeType : EmployeeType = .Programmer
-    
     var vehicleColor: [String] = ["Red", "Blue", "Yellow", "Green","Orange","Purple","Pink", "Brown", "White", "Black", "Beige"]
     var selectedVehicleColor = ""
     var selectedVehicleType = VehicleType.Car
     var isSideCar: Bool?
     var newEmployee : EmployeeProtocol?
     weak var delegate: EmployeeListViewController?
+    var employeeList : [EmployeeProtocol] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +63,7 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        delegate?.updateEmployeeList(with: newEmployee!)
+        delegate?.updateEmployeeList(with: employeeList)
     }
     
     func setRadioImageForButton(button: UIButton, isSelected: Bool) {
@@ -85,28 +85,35 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     @IBAction func registerAction(_ sender: Any) {
+        let empID = employeeIDTextField.text ?? ""
+        
         if validateEmployee() {
-            let employeeName = (firstNameTextField.text ?? "") + " " + (lastNameTextField.text ?? "")
-            let year = Int(birthYearTextField.text ?? "0") ?? 0
-            let rate = Int(occupationRateTextField.text ?? "0")  ?? 0
-            let noOfTypes = Int(noOfTypesForEmployeeTextField.text ?? "0") ?? 0
-            
-            newEmployee = Employee(name: employeeName, birthYear: year, rate: rate )
-  
-            
-            switch selectedEmployeeType {
+            if employeeList.contains(where: { $0.employeeID == empID }){
+                showAlert(title: "Register Error", actionTitle: "OK", message: "This employeeID has been taken", preferredStyle: .alert)
+            }else{
+                let employeeName = (firstNameTextField.text ?? "") + " " + (lastNameTextField.text ?? "")
+                let year = Int(birthYearTextField.text ?? "0") ?? 0
+                let rate = Int(occupationRateTextField.text ?? "0")  ?? 0
+                let noOfTypes = Int(noOfTypesForEmployeeTextField.text ?? "0") ?? 0
+                let monthlyIncome = Double(monthlySalaryTextField.text ?? "0.0")  ?? 0
+                
+                switch selectedEmployeeType {
                 case .Programmer:
-                    newEmployee = Programmer(name: employeeName, birthYear: year, nbProjects: noOfTypes, rate: rate )
-
-                case .Tester:
-                    newEmployee = Tester(name: employeeName, birthYear: year, nbBugs: noOfTypes, rate: rate)
-                case .Manager:
-                    newEmployee = Manager(name: employeeName, birthYear: year, nbClients: noOfTypes, nbTravelDays: 0, rate: rate)
-            }
-            
-            newEmployee?.age = newEmployee?.calculateAge(birthYear: year) ?? 0
-            newEmployee?.employeeVehicle = getEmploeyeeVehicle()
+                    newEmployee = Programmer(employeeId : empID, name: employeeName, birthYear: year, nbProjects: noOfTypes, rate: rate )
                     
+                case .Tester:
+                    newEmployee = Tester(employeeId : empID, name: employeeName, birthYear: year, nbBugs: noOfTypes, rate: rate)
+                case .Manager:
+                    newEmployee = Manager(employeeId : empID, name: employeeName, birthYear: year, nbClients: noOfTypes, nbTravelDays: 0, rate: rate)
+                }
+                let age = newEmployee?.calculateAge(birthYear: year) ?? 0
+                newEmployee?.age = age
+                newEmployee?.employeeVehicle = getEmploeyeeVehicle()
+                newEmployee?.monthlyIncome = monthlyIncome
+                employeeList.append(newEmployee!)
+                resetRegisterForm()
+                showAlert(title: "Register Sucess", actionTitle: "OK", message: "Employee registerd successfully", preferredStyle: .alert)
+            }                    
         }else{
             showAlert(title: "Error", actionTitle: "OK", message: "Something went wrong. Please check your entered values.", preferredStyle: .alert)
         }
@@ -207,22 +214,7 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     private func employeeTypeChanged(){
         self.employeeTypePicker.isHidden = true
         self.employeeTypeTextField.text = selectedEmployeeType.rawValue
-        
-//        if self.selectedEmployeeType == "Programmer"{
-//            self.noOfTypesForEmployeeLabel.text = "# Projects"
-//            self.noOfTypesForEmployeeTextField.text = ""
-//        }else if self.selectedEmployeeType == "Manager"{
-//            self.noOfTypesForEmployeeLabel.text = "# Clients"
-//            self.noOfTypesForEmployeeTextField.text = ""
-//        }else if self.selectedEmployeeType == "Tester"{
-//            self.noOfTypesForEmployeeLabel.text = "# Bugs"
-//            self.noOfTypesForEmployeeTextField.text = ""
-//        }else{
-//            self.noOfTypesForEmployeeLabel.isHidden = true
-//            self.noOfTypesForEmployeeTextField.isHidden = true
-//        }
-        
-        
+
         switch selectedEmployeeType {
             case .Programmer:
                 self.noOfTypesForEmployeeLabel.text = "# Projects"
@@ -311,6 +303,25 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         }else {
             return nil
         }
+    }
+    
+    private func resetRegisterForm(){
+        firstNameTextField.text = ""
+        lastNameTextField.text = ""
+        birthYearTextField.text = ""
+        monthlySalaryTextField.text = ""
+        occupationRateTextField.text = ""
+        employeeIDTextField.text = ""
+        noOfTypesForEmployeeTextField.text = ""
+        carTypeTextfield.text = ""
+        vehicleModelTextField.text = ""
+        plateNumberTextField.text = ""
+        
+        selectedEmployeeType = self.employeeType[0]
+        employeeTypeChanged()
+        
+        selectedVehicleColor = vehicleColor[0]
+        vehicleColorChanged()
     }
     
     private func showAlert(title : String, actionTitle : String, message : String, preferredStyle : UIAlertController.Style){

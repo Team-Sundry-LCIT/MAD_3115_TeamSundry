@@ -11,7 +11,7 @@ protocol TesterProtocol  {
 }
 
 struct Tester: TesterProtocol, EmployeeProtocol, EmployeeContract {
-  
+    var employeeID: String
     var name: String
     var birthYear: Int
     var age: Int
@@ -30,7 +30,8 @@ struct Tester: TesterProtocol, EmployeeProtocol, EmployeeContract {
         return text
     }
     
-    init(name: String, birthYear: Int,nbBugs: Int,rate:Int=100,employeeVehicle: VehicleProtocol?=nil){
+    init(employeeId : String, name: String, birthYear: Int,nbBugs: Int,rate:Int=100,employeeVehicle: VehicleProtocol?=nil){
+        self.employeeID = employeeId
         self.name = name
         self.birthYear = birthYear
         self.rate = rate
