@@ -22,6 +22,9 @@ class EmployeeListViewController: UIViewController {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "registerForm")
         self.present(nextViewController, animated:true, completion:nil)
     }
+    
+    
+    
 }
 
 extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -60,5 +63,9 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "EmployeeDetails", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "employeeDetail")
+        self.present(nextViewController, animated:true, completion:nil)
+    }
 }
