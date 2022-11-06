@@ -17,6 +17,11 @@ class EmployeeListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func addEmployee(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "RegisterForm", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "registerForm")
+        self.present(nextViewController, animated:true, completion:nil)
+    }
 }
 
 extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource {

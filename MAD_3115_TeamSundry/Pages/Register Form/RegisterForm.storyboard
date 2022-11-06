@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUC-ZX-fur">
-                                <rect key="frame" x="0.0" y="91" width="390" height="653"/>
+                                <rect key="frame" x="0.0" y="143" width="390" height="601"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxD-gq-t2n">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1044"/>
@@ -578,7 +578,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dVR-cC-weF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fux-fm-ggh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="registerForm" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fux-fm-ggh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="kSX-zV-SGG">
                         <rect key="frame" x="0.0" y="47" width="390" height="96"/>
