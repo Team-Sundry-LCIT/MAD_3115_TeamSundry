@@ -13,6 +13,7 @@ protocol ManagerProtocol  {
 }
 
 struct Manager: ManagerProtocol, EmployeeProtocol, EmployeeContract {
+    var employeeID: String
     var name: String
     var birthYear: Int
     var age: Int
@@ -35,7 +36,8 @@ struct Manager: ManagerProtocol, EmployeeProtocol, EmployeeContract {
         return text
     }
     
-    init(name: String, birthYear: Int, nbClients: Int, nbTravelDays: Int, rate: Int = 100, employeeVehicle: VehicleProtocol? = nil) {
+    init(employeeId : String, name: String, birthYear: Int, nbClients: Int, nbTravelDays: Int, rate: Int = 100, employeeVehicle: VehicleProtocol? = nil) {
+        self.employeeID = employeeId
         self.name = name
         self.birthYear = birthYear
         self.age = 0

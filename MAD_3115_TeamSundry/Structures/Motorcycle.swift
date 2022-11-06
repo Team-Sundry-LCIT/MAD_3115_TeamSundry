@@ -10,6 +10,10 @@ protocol MotorcycleProtocol {
 }
 
 struct Motorcycle: MotorcycleProtocol, VehicleProtocol {
+    var make: String
+    var plate: String
+    var color: String
+    var category: String    
     //defining variable
     var sidecar: Bool = false
     

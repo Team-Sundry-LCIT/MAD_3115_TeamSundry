@@ -10,6 +10,9 @@ class EmployeeListViewController: UIViewController {
     
     @IBOutlet weak var employeesListtableView: UITableView!
     
+    var employeeList = [EmployeeProtocol]()
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         employeesListtableView.delegate = self
@@ -19,8 +22,10 @@ class EmployeeListViewController: UIViewController {
 
     @IBAction func addEmployee(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "RegisterForm", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "registerForm")
-        self.present(nextViewController, animated:true, completion:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RegisterFormViewController") as! RegisterFormViewController
+        nextViewController.delegate = self
+        nextViewController.employeeList = self.employeeList
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
 
@@ -60,5 +65,17 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    func updateEmployeeList(with employees : [EmployeeProtocol]){
+        employeeList = employees
+ //       saveEmplooyeeList
+    }
+    
+    func saveEmplooyeeList(){
+        defaults.set(employeeList, forKey: "SavedEmployeeList")
+    }
+    
+    func getEmplooyeeList(){
+        employeeList = defaults.object(forKey: "SavedEmployeeList") as? [EmployeeProtocol] ?? [EmployeeProtocol]()
+    }
     
 }

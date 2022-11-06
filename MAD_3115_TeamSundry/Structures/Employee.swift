@@ -6,12 +6,13 @@
 import Foundation
 
 protocol EmployeeProtocol{
+    var employeeID: String { get set }
     var name: String { get set }
     var birthYear: Int{  get set }
     var age: Int { get set }
     var monthlyIncome: Double { get set }
     var rate: Int { get set }
-    var employeeVehicle: VehicleProtocol? {get}
+    var employeeVehicle: VehicleProtocol? {get set}
     var contract: ContractProtocol? { get set }
     
     func calculateAge(birthYear: Int) -> Int
@@ -21,7 +22,8 @@ protocol EmployeeProtocol{
 }
 
 struct Employee : EmployeeProtocol, EmployeeContract {
-    
+
+    var employeeID: String
     var name: String
     var birthYear: Int
     var age: Int
@@ -30,11 +32,12 @@ struct Employee : EmployeeProtocol, EmployeeContract {
     var employeeVehicle: VehicleProtocol?
     var contract: ContractProtocol?
     
-    init(name: String,birthYear:Int,rate: Int = 100,employeeVehicle: VehicleProtocol? = nil) {
-        self.name = name;
-        self.birthYear = birthYear;
+    init(employeeId : String, name: String,birthYear:Int,rate: Int = 100,employeeVehicle: VehicleProtocol? = nil) {
+        self.employeeID = employeeId
+        self.name = name
+        self.birthYear = birthYear
         self.age = 0
-        self.monthlyIncome = 0;
+        self.monthlyIncome = 0
         if(rate < 10) {
             self.rate = 10
         }

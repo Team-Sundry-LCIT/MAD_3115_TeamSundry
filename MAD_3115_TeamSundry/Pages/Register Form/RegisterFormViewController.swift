@@ -33,11 +33,15 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var vehicleColorTextField: UITextField!
     @IBOutlet weak var vehicleColorPickerView: UIPickerView!
     
-    var employeeType : [String] = ["Programmer", "Manager", "Tester"]
-    var selectedEmployeeType : String = ""
-    
+    var employeeType : [EmployeeType] = [EmployeeType.Programmer, EmployeeType.Manager, EmployeeType.Tester]
+    var selectedEmployeeType : EmployeeType = .Programmer
     var vehicleColor: [String] = ["Red", "Blue", "Yellow", "Green","Orange","Purple","Pink", "Brown", "White", "Black", "Beige"]
     var selectedVehicleColor = ""
+    var selectedVehicleType = VehicleType.Car
+    var isSideCar: Bool?
+    var newEmployee : EmployeeProtocol?
+    weak var delegate: EmployeeListViewController?
+    var employeeList : [EmployeeProtocol] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +60,10 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         setRadioImageForButton(button: motorbikeButton, isSelected: false)
         setRadioImageForButton(button: sideCarYesButton, isSelected: true)
         setRadioImageForButton(button: sideCarNoButton, isSelected: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        delegate?.updateEmployeeList(with: employeeList)
     }
     
     func setRadioImageForButton(button: UIButton, isSelected: Bool) {
@@ -77,6 +85,38 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     @IBAction func registerAction(_ sender: Any) {
+        let empID = employeeIDTextField.text ?? ""
+        
+        if validateEmployee() {
+            if employeeList.contains(where: { $0.employeeID == empID }){
+                showAlert(title: "Register Error", actionTitle: "OK", message: "This employeeID has been taken", preferredStyle: .alert)
+            }else{
+                let employeeName = (firstNameTextField.text ?? "") + " " + (lastNameTextField.text ?? "")
+                let year = Int(birthYearTextField.text ?? "0") ?? 0
+                let rate = Int(occupationRateTextField.text ?? "0")  ?? 0
+                let noOfTypes = Int(noOfTypesForEmployeeTextField.text ?? "0") ?? 0
+                let monthlyIncome = Double(monthlySalaryTextField.text ?? "0.0")  ?? 0
+                
+                switch selectedEmployeeType {
+                case .Programmer:
+                    newEmployee = Programmer(employeeId : empID, name: employeeName, birthYear: year, nbProjects: noOfTypes, rate: rate )
+                    
+                case .Tester:
+                    newEmployee = Tester(employeeId : empID, name: employeeName, birthYear: year, nbBugs: noOfTypes, rate: rate)
+                case .Manager:
+                    newEmployee = Manager(employeeId : empID, name: employeeName, birthYear: year, nbClients: noOfTypes, nbTravelDays: 0, rate: rate)
+                }
+                let age = newEmployee?.calculateAge(birthYear: year) ?? 0
+                newEmployee?.age = age
+                newEmployee?.employeeVehicle = getEmploeyeeVehicle()
+                newEmployee?.monthlyIncome = monthlyIncome
+                employeeList.append(newEmployee!)
+                resetRegisterForm()
+                showAlert(title: "Register Sucess", actionTitle: "OK", message: "Employee registerd successfully", preferredStyle: .alert)
+            }                    
+        }else{
+            showAlert(title: "Error", actionTitle: "OK", message: "Something went wrong. Please check your entered values.", preferredStyle: .alert)
+        }
     }
     
     @IBAction func vehicleTypeSelectAction(_ sender: UIButton) {
@@ -84,10 +124,12 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         case carButton:
             setRadioImageForButton(button: carButton, isSelected: true)
             setRadioImageForButton(button: motorbikeButton, isSelected: false)
+            selectedVehicleType = VehicleType.Car
             selectdVehicleType(isCar: true)
         case motorbikeButton:
             setRadioImageForButton(button: carButton, isSelected: false)
             setRadioImageForButton(button: motorbikeButton, isSelected: true)
+            selectedVehicleType = VehicleType.Motorbike
             selectdVehicleType(isCar: false)
         default:
             break
@@ -99,10 +141,13 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         case sideCarYesButton:
             setRadioImageForButton(button: sideCarYesButton, isSelected: true)
             setRadioImageForButton(button: sideCarNoButton, isSelected: false)
+            isSideCar = true
         case sideCarNoButton:
             setRadioImageForButton(button: sideCarYesButton, isSelected: false)
             setRadioImageForButton(button: sideCarNoButton, isSelected: true)
+            isSideCar = false
         default:
+            isSideCar = nil
             break
         }
     }
@@ -148,7 +193,7 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == employeeTypePicker {
-            return employeeType[row]
+            return employeeType[row].rawValue
         } else if pickerView == vehicleColorPickerView {
             return vehicleColor[row]
         } else {
@@ -168,19 +213,18 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     private func employeeTypeChanged(){
         self.employeeTypePicker.isHidden = true
-        self.employeeTypeTextField.text = selectedEmployeeType
-        if self.selectedEmployeeType == "Programmer"{
-            self.noOfTypesForEmployeeLabel.text = "# Projects"
-            self.noOfTypesForEmployeeTextField.text = ""
-        }else if self.selectedEmployeeType == "Manager"{
-            self.noOfTypesForEmployeeLabel.text = "# Clients"
-            self.noOfTypesForEmployeeTextField.text = ""
-        }else if self.selectedEmployeeType == "Tester"{
-            self.noOfTypesForEmployeeLabel.text = "# Bugs"
-            self.noOfTypesForEmployeeTextField.text = ""
-        }else{
-            self.noOfTypesForEmployeeLabel.isHidden = true
-            self.noOfTypesForEmployeeTextField.isHidden = true
+        self.employeeTypeTextField.text = selectedEmployeeType.rawValue
+
+        switch selectedEmployeeType {
+            case .Programmer:
+                self.noOfTypesForEmployeeLabel.text = "# Projects"
+                self.noOfTypesForEmployeeTextField.text = ""
+            case .Tester:
+                self.noOfTypesForEmployeeLabel.text = "# Bugs"
+                self.noOfTypesForEmployeeTextField.text = ""
+            case .Manager:
+                self.noOfTypesForEmployeeLabel.text = "# Clients"
+                self.noOfTypesForEmployeeTextField.text = ""
         }
     }
     
@@ -188,4 +232,116 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.vehicleColorPickerView.isHidden = true
         self.vehicleColorTextField.text = selectedVehicleColor
     }
+    
+    private func validateEmployee() -> Bool {
+        
+        if firstNameTextField.text == "" {
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the first name to continue.", preferredStyle: .alert)
+            return false
+        }else if lastNameTextField.text == "" {
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the last name to continue.", preferredStyle: .alert)
+            return false
+        }else if birthYearTextField.text == "" {
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the birth year to continue.", preferredStyle: .alert)
+            return false
+        }else if monthlySalaryTextField.text == "" {
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the monthly salary to continue.", preferredStyle: .alert)
+            return false
+        }else if occupationRateTextField.text == "" {
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the occupation rate to continue.", preferredStyle: .alert)
+            return false
+        }else if employeeIDTextField.text == "" {
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the employee ID to continue.", preferredStyle: .alert)
+            return false
+        }else if vehicleModelTextField.text == "" {
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the vehicle model to continue.", preferredStyle: .alert)
+            return false
+        }else if plateNumberTextField.text == "" {
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the plate number to continue.", preferredStyle: .alert)
+            return false
+        }else if vehicleColorTextField.text == "" {
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the vehicle color to continue.", preferredStyle: .alert)
+            return false
+        }else if noOfTypesForEmployeeTextField.text == "" {
+            var type = "projects"
+            switch selectedEmployeeType {
+                case .Programmer:
+                    type = "projects"
+                case .Tester:
+                    type = "bugs"
+                case .Manager:
+                    type = "clients"
+            }
+            showAlert(title: "Error", actionTitle: "OK", message: "Please provide the " + type + " count to continue.", preferredStyle: .alert)
+            return false
+        }else if selectedVehicleType == .Car{
+            if carTypeTextfield.text == "" {
+                showAlert(title: "Error", actionTitle: "OK", message: "Please provide the car type to continue.", preferredStyle: .alert)
+                return false
+            }else{
+                return true
+            }
+        }else if selectedVehicleType == .Motorbike{
+            if isSideCar == nil {
+                showAlert(title: "Error", actionTitle: "OK", message: "Please provide the side car type to continue.", preferredStyle: .alert)
+                return false
+            }else{
+                return true
+            }
+        }else {            
+            return true
+        }
+    }
+    
+    private func getEmploeyeeVehicle() -> VehicleProtocol? {
+        if selectedVehicleType == .Car{
+            let car = Car(make: vehicleModelTextField.text ?? "", plate: plateNumberTextField.text ?? "", color: vehicleColorTextField.text ?? "", category: selectedVehicleType.rawValue, gear: "Manual", type: carTypeTextfield.text ?? "")
+            return car
+        }else if selectedVehicleType == .Motorbike{
+            let motorcycle = Motorcycle(make: vehicleModelTextField.text ?? "", plate: plateNumberTextField.text ?? "", color: vehicleColorTextField.text ?? "", category: selectedVehicleType.rawValue, sidecar: isSideCar ?? false)
+            return motorcycle
+        }else {
+            return nil
+        }
+    }
+    
+    private func resetRegisterForm(){
+        firstNameTextField.text = ""
+        lastNameTextField.text = ""
+        birthYearTextField.text = ""
+        monthlySalaryTextField.text = ""
+        occupationRateTextField.text = ""
+        employeeIDTextField.text = ""
+        noOfTypesForEmployeeTextField.text = ""
+        carTypeTextfield.text = ""
+        vehicleModelTextField.text = ""
+        plateNumberTextField.text = ""
+        
+        selectedEmployeeType = self.employeeType[0]
+        employeeTypeChanged()
+        
+        selectedVehicleColor = vehicleColor[0]
+        vehicleColorChanged()
+    }
+    
+    private func showAlert(title : String, actionTitle : String, message : String, preferredStyle : UIAlertController.Style){
+        
+        let alert = UIAlertController(title:title , message:message , preferredStyle: preferredStyle)
+        let action = UIAlertAction(title: actionTitle, style: .cancel)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+}
+
+
+enum EmployeeType : String, CaseIterable{
+    case Programmer
+    case Manager
+    case Tester
+    
+}
+
+enum VehicleType : String, CaseIterable{
+    case Car
+    case Motorbike
 }
