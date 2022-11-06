@@ -10,6 +10,7 @@ class EmployeeListViewController: UIViewController {
     
     @IBOutlet weak var employeesListtableView: UITableView!
     
+    var employeeList = [EmployeeProtocol]()
     override func viewDidLoad() {
         super.viewDidLoad()
         employeesListtableView.delegate = self
@@ -58,6 +59,10 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+    
+    func updateEmployeeList(with newEmployees : EmployeeProtocol){
+        employeeList.append(newEmployees)
     }
     
     

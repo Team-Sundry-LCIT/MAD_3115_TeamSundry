@@ -11,7 +11,7 @@ protocol EmployeeProtocol{
     var age: Int { get set }
     var monthlyIncome: Double { get set }
     var rate: Int { get set }
-    var employeeVehicle: VehicleProtocol? {get}
+    var employeeVehicle: VehicleProtocol? {get set}
     var contract: ContractProtocol? { get set }
     
     func calculateAge(birthYear: Int) -> Int

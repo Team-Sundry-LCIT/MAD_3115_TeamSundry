@@ -40,6 +40,8 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     var selectedVehicleColor = ""
     var selectedVehicleType = VehicleType.Car
     var isSideCar: Bool?
+    var newEmployee : EmployeeProtocol?
+    weak var delegate: EmployeeListViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,10 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         setRadioImageForButton(button: motorbikeButton, isSelected: false)
         setRadioImageForButton(button: sideCarYesButton, isSelected: true)
         setRadioImageForButton(button: sideCarNoButton, isSelected: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        delegate?.updateEmployeeList(with: newEmployee!)
     }
     
     func setRadioImageForButton(button: UIButton, isSelected: Bool) {
@@ -81,32 +87,28 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBAction func registerAction(_ sender: Any) {
         if validateEmployee() {
             let employeeName = (firstNameTextField.text ?? "") + " " + (lastNameTextField.text ?? "")
-            let birthYear = Int(birthYearTextField.text ?? "0") ?? 0
+            let year = Int(birthYearTextField.text ?? "0") ?? 0
             let rate = Int(occupationRateTextField.text ?? "0")  ?? 0
             let noOfTypes = Int(noOfTypesForEmployeeTextField.text ?? "0") ?? 0
             
-            var employee = Employee(name: employeeName, birthYear: birthYear, rate: rate)
+            newEmployee = Employee(name: employeeName, birthYear: year, rate: rate )
+  
             
-            let age = employee.calculateAge(birthYear: birthYear)
-            employee.age = age
-         
             switch selectedEmployeeType {
                 case .Programmer:
-                    var programmer = Programmer(name: employeeName, birthYear: birthYear, nbProjects: noOfTypes, rate: rate )
-                programmer.age = age
-                programmer.employeeVehicle = getEmploeyeeVehicle()
+                    newEmployee = Programmer(name: employeeName, birthYear: year, nbProjects: noOfTypes, rate: rate )
+
                 case .Tester:
-                    var tester = Tester(name: employeeName, birthYear: birthYear, nbBugs: noOfTypes, rate: rate)
-                tester.age = age
-                tester.employeeVehicle = getEmploeyeeVehicle()
+                    newEmployee = Tester(name: employeeName, birthYear: year, nbBugs: noOfTypes, rate: rate)
                 case .Manager:
-                var manager = Manager(name: employeeName, birthYear: birthYear, nbClients: noOfTypes, nbTravelDays: 0, rate: rate)
-                manager.age = age
-                manager.employeeVehicle = getEmploeyeeVehicle()
+                    newEmployee = Manager(name: employeeName, birthYear: year, nbClients: noOfTypes, nbTravelDays: 0, rate: rate)
             }
+            
+            newEmployee?.age = newEmployee?.calculateAge(birthYear: year) ?? 0
+            newEmployee?.employeeVehicle = getEmploeyeeVehicle()
                     
         }else{
-            
+            showAlert(title: "Error", actionTitle: "OK", message: "Something went wrong. Please check your entered values.", preferredStyle: .alert)
         }
     }
     
@@ -231,9 +233,6 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
             case .Manager:
                 self.noOfTypesForEmployeeLabel.text = "# Clients"
                 self.noOfTypesForEmployeeTextField.text = ""
-            default:
-                self.noOfTypesForEmployeeLabel.isHidden = true
-                self.noOfTypesForEmployeeTextField.isHidden = true
         }
     }
     
