@@ -38,7 +38,7 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     var vehicleColor: [String] = ["Red", "Blue", "Yellow", "Green","Orange","Purple","Pink", "Brown", "White", "Black", "Beige"]
     var selectedVehicleColor = ""
-    var selectedVehicleType = "Car"
+    var selectedVehicleType = VehicleType.Car
     var isSideCar: Bool?
     
     override func viewDidLoad() {
@@ -79,6 +79,35 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     @IBAction func registerAction(_ sender: Any) {
+        if validateEmployee() {
+            let employeeName = (firstNameTextField.text ?? "") + " " + (lastNameTextField.text ?? "")
+            let birthYear = Int(birthYearTextField.text ?? "0") ?? 0
+            let rate = Int(occupationRateTextField.text ?? "0")  ?? 0
+            let noOfTypes = Int(noOfTypesForEmployeeTextField.text ?? "0") ?? 0
+            
+            var employee = Employee(name: employeeName, birthYear: birthYear, rate: rate)
+            
+            let age = employee.calculateAge(birthYear: birthYear)
+            employee.age = age
+         
+            switch selectedEmployeeType {
+                case .Programmer:
+                    var programmer = Programmer(name: employeeName, birthYear: birthYear, nbProjects: noOfTypes, rate: rate )
+                programmer.age = age
+                programmer.employeeVehicle = getEmploeyeeVehicle()
+                case .Tester:
+                    var tester = Tester(name: employeeName, birthYear: birthYear, nbBugs: noOfTypes, rate: rate)
+                tester.age = age
+                tester.employeeVehicle = getEmploeyeeVehicle()
+                case .Manager:
+                var manager = Manager(name: employeeName, birthYear: birthYear, nbClients: noOfTypes, nbTravelDays: 0, rate: rate)
+                manager.age = age
+                manager.employeeVehicle = getEmploeyeeVehicle()
+            }
+                    
+        }else{
+            
+        }
     }
     
     @IBAction func vehicleTypeSelectAction(_ sender: UIButton) {
@@ -86,12 +115,12 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
         case carButton:
             setRadioImageForButton(button: carButton, isSelected: true)
             setRadioImageForButton(button: motorbikeButton, isSelected: false)
-            selectedVehicleType = carButton.titleLabel?.text ?? ""
+            selectedVehicleType = VehicleType.Car
             selectdVehicleType(isCar: true)
         case motorbikeButton:
             setRadioImageForButton(button: carButton, isSelected: false)
             setRadioImageForButton(button: motorbikeButton, isSelected: true)
-            selectedVehicleType = motorbikeButton.titleLabel?.text ?? ""
+            selectedVehicleType = VehicleType.Motorbike
             selectdVehicleType(isCar: false)
         default:
             break
@@ -254,14 +283,14 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
             }
             showAlert(title: "Error", actionTitle: "OK", message: "Please provide the " + type + " count to continue.", preferredStyle: .alert)
             return false
-        }else if selectedVehicleType == "Car"{
+        }else if selectedVehicleType == .Car{
             if carTypeTextfield.text == "" {
                 showAlert(title: "Error", actionTitle: "OK", message: "Please provide the car type to continue.", preferredStyle: .alert)
                 return false
             }else{
                 return true
             }
-        }else if selectedVehicleType == "Motorbike"{
+        }else if selectedVehicleType == .Motorbike{
             if isSideCar == nil {
                 showAlert(title: "Error", actionTitle: "OK", message: "Please provide the side car type to continue.", preferredStyle: .alert)
                 return false
@@ -270,6 +299,18 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
             }
         }else {            
             return true
+        }
+    }
+    
+    private func getEmploeyeeVehicle() -> VehicleProtocol? {
+        if selectedVehicleType == .Car{
+            let car = Car(make: vehicleModelTextField.text ?? "", plate: plateNumberTextField.text ?? "", color: vehicleColorTextField.text ?? "", category: selectedVehicleType.rawValue, gear: "Manual", type: carTypeTextfield.text ?? "")
+            return car
+        }else if selectedVehicleType == .Motorbike{
+            let motorcycle = Motorcycle(make: vehicleModelTextField.text ?? "", plate: plateNumberTextField.text ?? "", color: vehicleColorTextField.text ?? "", category: selectedVehicleType.rawValue, sidecar: isSideCar ?? false)
+            return motorcycle
+        }else {
+            return nil
         }
     }
     
@@ -288,4 +329,9 @@ enum EmployeeType : String, CaseIterable{
     case Manager
     case Tester
     
+}
+
+enum VehicleType : String, CaseIterable{
+    case Car
+    case Motorbike
 }

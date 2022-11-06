@@ -11,6 +11,11 @@ protocol CarProtocol{
 }
 
 struct Car: CarProtocol, VehicleProtocol {
+    var make: String
+    var plate: String
+    var color: String    
+    var category: String
+    
     //defining variable
     var gear:String
     var type:String

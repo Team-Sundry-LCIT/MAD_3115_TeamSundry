@@ -21,7 +21,7 @@ protocol EmployeeProtocol{
 }
 
 struct Employee : EmployeeProtocol, EmployeeContract {
-    
+
     var name: String
     var birthYear: Int
     var age: Int

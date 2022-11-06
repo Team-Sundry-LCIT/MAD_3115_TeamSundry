@@ -29,11 +29,11 @@ struct Vehicle : VehicleProtocol {
     }
     
     //initialisation as per test case
-    init(_make: String, _plate: String, _color: String, _category: String) {
-        self.make = _make
-        self.plate = _plate
-        self.color = _color
-        self.category = _category
+    init(make: String, plate: String, color: String, category: String) {
+        self.make = make
+        self.plate = plate
+        self.color = color
+        self.category = category
     }
     
 }

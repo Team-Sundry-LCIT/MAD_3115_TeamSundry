@@ -10,7 +10,7 @@ protocol TesterProtocol  {
     var gainFactorError: Int { get }
 }
 
-struct Tester: TesterProtocol, EmployeeProtocol, EmployeeContract {    
+struct Tester: TesterProtocol, EmployeeProtocol, EmployeeContract {
   
     var name: String
     var birthYear: Int

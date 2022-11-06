@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0F737C29183184003E0195 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F737B29183183003E0195 /* Manager.swift */; };
+		2C0F737E29183188003E0195 /* Programmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F737D29183188003E0195 /* Programmer.swift */; };
+		2C0F73802918318D003E0195 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F737F2918318D003E0195 /* Tester.swift */; };
+		2C0F7384291831AD003E0195 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F7383291831AD003E0195 /* Employee.swift */; };
+		2C0F738E2918330F003E0195 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F7386291831BC003E0195 /* Vehicle.swift */; };
+		2C0F738F2918331D003E0195 /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F738C291831C0003E0195 /* Contract.swift */; };
+		2C0F739029183374003E0195 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F7387291831BC003E0195 /* Car.swift */; };
+		2C0F739129183374003E0195 /* Motorcycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F7388291831BC003E0195 /* Motorcycle.swift */; };
+		2C0F739229183374003E0195 /* Temporary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F738B291831C0003E0195 /* Temporary.swift */; };
+		2C0F739329183374003E0195 /* Permanent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F738A291831C0003E0195 /* Permanent.swift */; };
 		990E10AD290C822000B9238F /* EmployeeDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990E10AC290C822000B9238F /* EmployeeDetails.storyboard */; };
 		990E10AF290C823B00B9238F /* RegisterForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990E10AE290C823B00B9238F /* RegisterForm.storyboard */; };
 		990E10B1290C829400B9238F /* EmployeeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E10B0290C829400B9238F /* EmployeeDetailsViewController.swift */; };
@@ -21,7 +31,6 @@
 		999DB8242908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8232908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift */; };
 		999DB8262908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999DB8252908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift */; };
 		999DB8372908879A00D4AD0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999DB8362908879A00D4AD0A /* Images.xcassets */; };
-		999DB83B2908884800D4AD0A /* Work Space in Resources */ = {isa = PBXBuildFile; fileRef = 999DB8392908884800D4AD0A /* Work Space */; };
 		999DB83C2908884800D4AD0A /* Test Files in Resources */ = {isa = PBXBuildFile; fileRef = 999DB83A2908884800D4AD0A /* Test Files */; };
 		BD30CAA8291580FE002E576A /* EmployeeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD30CAA7291580FE002E576A /* EmployeeListTableViewCell.swift */; };
 		BD7F7AD52917FDFD00F58ECE /* EmplyeeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F7AD42917FDFD00F58ECE /* EmplyeeStruct.swift */; };
@@ -45,6 +54,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C0F737B29183183003E0195 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		2C0F737D29183188003E0195 /* Programmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programmer.swift; sourceTree = "<group>"; };
+		2C0F737F2918318D003E0195 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
+		2C0F7383291831AD003E0195 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		2C0F7386291831BC003E0195 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		2C0F7387291831BC003E0195 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		2C0F7388291831BC003E0195 /* Motorcycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motorcycle.swift; sourceTree = "<group>"; };
+		2C0F738A291831C0003E0195 /* Permanent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permanent.swift; sourceTree = "<group>"; };
+		2C0F738B291831C0003E0195 /* Temporary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temporary.swift; sourceTree = "<group>"; };
+		2C0F738C291831C0003E0195 /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		990E10AC290C822000B9238F /* EmployeeDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeDetails.storyboard; sourceTree = "<group>"; };
 		990E10AE290C823B00B9238F /* RegisterForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterForm.storyboard; sourceTree = "<group>"; };
 		990E10B0290C829400B9238F /* EmployeeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +82,6 @@
 		999DB8232908869600D4AD0A /* MAD_3115_TeamSundryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAD_3115_TeamSundryUITests.swift; sourceTree = "<group>"; };
 		999DB8252908869600D4AD0A /* MAD_3115_TeamSundryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAD_3115_TeamSundryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		999DB8362908879A00D4AD0A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		999DB8392908884800D4AD0A /* Work Space */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Work Space"; sourceTree = "<group>"; };
 		999DB83A2908884800D4AD0A /* Test Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Test Files"; sourceTree = "<group>"; };
 		BD30CAA7291580FE002E576A /* EmployeeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListTableViewCell.swift; sourceTree = "<group>"; };
 		BD7F7AD42917FDFD00F58ECE /* EmplyeeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmplyeeStruct.swift; sourceTree = "<group>"; };
@@ -94,6 +112,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C0F737829183086003E0195 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				2C0F737F2918318D003E0195 /* Tester.swift */,
+				2C0F737D29183188003E0195 /* Programmer.swift */,
+				2C0F7383291831AD003E0195 /* Employee.swift */,
+				2C0F737B29183183003E0195 /* Manager.swift */,
+				2C0F738C291831C0003E0195 /* Contract.swift */,
+				2C0F7386291831BC003E0195 /* Vehicle.swift */,
+				2C0F738A291831C0003E0195 /* Permanent.swift */,
+				2C0F738B291831C0003E0195 /* Temporary.swift */,
+				2C0F7387291831BC003E0195 /* Car.swift */,
+				2C0F7388291831BC003E0195 /* Motorcycle.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
 		990E10B4290C82FE00B9238F /* Employee List */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +181,7 @@
 		999DB8012908869400D4AD0A /* MAD_3115_TeamSundry */ = {
 			isa = PBXGroup;
 			children = (
+				2C0F737829183086003E0195 /* Structures */,
 				999DB8382908882200D4AD0A /* Files from MAD 3004 */,
 				999DB8352908876900D4AD0A /* Images & Assets */,
 				999DB834290886DD00D4AD0A /* Pages */,
@@ -205,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				999DB83A2908884800D4AD0A /* Test Files */,
-				999DB8392908884800D4AD0A /* Work Space */,
 			);
 			path = "Files from MAD 3004";
 			sourceTree = "<group>";
@@ -317,7 +352,6 @@
 				999DB80F2908869600D4AD0A /* LaunchScreen.storyboard in Resources */,
 				999DB83C2908884800D4AD0A /* Test Files in Resources */,
 				999DB8372908879A00D4AD0A /* Images.xcassets in Resources */,
-				999DB83B2908884800D4AD0A /* Work Space in Resources */,
 				990E10AD290C822000B9238F /* EmployeeDetails.storyboard in Resources */,
 				999DB80C2908869600D4AD0A /* Assets.xcassets in Resources */,
 				999DB80A2908869400D4AD0A /* EmployeeList.storyboard in Resources */,
@@ -346,12 +380,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0F738E2918330F003E0195 /* Vehicle.swift in Sources */,
+				2C0F739129183374003E0195 /* Motorcycle.swift in Sources */,
 				999DB8072908869400D4AD0A /* EmployeeListViewController.swift in Sources */,
+				2C0F7384291831AD003E0195 /* Employee.swift in Sources */,
+				2C0F737E29183188003E0195 /* Programmer.swift in Sources */,
+				2C0F738F2918331D003E0195 /* Contract.swift in Sources */,
+				2C0F739329183374003E0195 /* Permanent.swift in Sources */,
 				999DB8032908869400D4AD0A /* AppDelegate.swift in Sources */,
 				990E10B3290C82A700B9238F /* RegisterFormViewController.swift in Sources */,
 				BD30CAA8291580FE002E576A /* EmployeeListTableViewCell.swift in Sources */,
 				999DB8052908869400D4AD0A /* SceneDelegate.swift in Sources */,
 				BD7F7AD52917FDFD00F58ECE /* EmplyeeStruct.swift in Sources */,
+				2C0F737C29183184003E0195 /* Manager.swift in Sources */,
+				2C0F73802918318D003E0195 /* Tester.swift in Sources */,
+				2C0F739229183374003E0195 /* Temporary.swift in Sources */,
+				2C0F739029183374003E0195 /* Car.swift in Sources */,
 				990E10B1290C829400B9238F /* EmployeeDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
