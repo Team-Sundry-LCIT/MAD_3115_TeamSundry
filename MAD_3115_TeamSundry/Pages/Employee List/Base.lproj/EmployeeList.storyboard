@@ -70,7 +70,7 @@
                                         <connections>
                                             <outlet property="avatarImage" destination="aC0-jU-G5Z" id="RxK-g7-eql"/>
                                             <outlet property="idLabel" destination="6Ml-qu-9bH" id="mAS-tt-jV1"/>
-                                            <outlet property="nameLabel" destination="35w-xf-jom" id="GRL-te-3Ee"/>
+                                            <outlet property="nameLabel" destination="35w-xf-jom" id="6O0-92-fhL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
