@@ -11,6 +11,8 @@ class EmployeeListViewController: UIViewController {
     @IBOutlet weak var employeesListtableView: UITableView!
     
     var employeeList = [EmployeeProtocol]()
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         employeesListtableView.delegate = self
@@ -63,7 +65,11 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     
     func updateEmployeeList(with newEmployees : EmployeeProtocol){
         employeeList.append(newEmployees)
+        defaults.set(employeeList, forKey: "SavedEmployeeList")
     }
     
+    func getEmplooyeeList(){
+        employeeList = defaults.object(forKey: "SavedEmployeeList") as? [EmployeeProtocol] ?? [EmployeeProtocol]()
+    }
     
 }
