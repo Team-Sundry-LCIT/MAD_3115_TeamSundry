@@ -30,22 +30,19 @@ class EmployeeListViewController: UIViewController {
 }
 
 extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return EmplyeeStruct.names.count
+        return employeeList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = employeesListtableView.dequeueReusableCell(withIdentifier: "EmployeeCell") as? EmployeeListTableViewCell {
-            cell.nameLabel?.text = EmplyeeStruct.names[indexPath.row]
-            cell.idLabel?.text = EmplyeeStruct.ids[indexPath.row]
-            cell.avatarImage?.image = UIImage(named: EmplyeeStruct.images[indexPath.row])
+            cell.nameLabel?.text = employeeList[indexPath.row].name
+            cell.idLabel?.text = employeeList[indexPath.row].employeeID
+            cell.avatarImage?.image = UIImage(named: "_Messages-avatar")
             return cell
+        } else {
+            return UITableViewCell()
         }
-        
-        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -67,6 +64,7 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     
     func updateEmployeeList(with employees : [EmployeeProtocol]){
         employeeList = employees
+        employeesListtableView.reloadData()
  //       saveEmplooyeeList
     }
     
