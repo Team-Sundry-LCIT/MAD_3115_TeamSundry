@@ -46,13 +46,10 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = employeesListtableView.dequeueReusableCell(withIdentifier: "EmployeeCell") as? EmployeeListTableViewCell {
-            if searching {
-                cell.nameLabel?.text = searchEmployee[indexPath.row].name
-            } else {
-                cell.nameLabel?.text = employeeList[indexPath.row].name
-                cell.idLabel?.text = employeeList[indexPath.row].employeeID
-                cell.avatarImage?.image = UIImage(named: "_Messages-avatar")
-            }
+            let list = searching ? searchEmployee : employeeList
+            cell.nameLabel?.text = list[indexPath.row].name
+            cell.idLabel?.text = list[indexPath.row].employeeID
+            cell.avatarImage?.image = UIImage(named: "_Messages-avatar")
             return cell
         } else {
             return UITableViewCell()
@@ -67,7 +64,6 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         if editingStyle == .delete {
             // Delete the row from the data source
             employeeList.remove(at: indexPath.row)
-            
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -90,13 +86,11 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
-            searchEmployee = employeeList.filter { $0.name.contains(searchText) }
+            searchEmployee = employeeList.filter { $0.name.lowercased().contains(searchText.lowercased()) || $0.employeeID.lowercased().contains(searchText.lowercased()) }
             searching = true
-            employeesListtableView.reloadData()
+        } else {
+            searching = false
         }
-    }
-    
-    func updateSearResults(for searchController : UISearchController) {
-        
+        employeesListtableView.reloadData()
     }
 }
