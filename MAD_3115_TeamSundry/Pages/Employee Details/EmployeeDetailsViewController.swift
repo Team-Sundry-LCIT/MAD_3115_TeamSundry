@@ -41,6 +41,9 @@ class EmployeeDetailsViewController: UIViewController {
         guard let employee = employee else {
             return
         }
+        guard let employeeVehicle = employee.employeeVehicle else {
+            return
+        }
         
         nameLbl.text = "\(String(describing: employee.name))"
         typeLbl.text = "An \(String(describing: employee.employeeID))"
@@ -49,10 +52,10 @@ class EmployeeDetailsViewController: UIViewController {
         Name: \(String(describing: employee.name)), a \(String(describing: type(of:employee)) )
         Age : \(String(describing: employee.age) )
         
-        Employee has a \(String(describing: type(of:employee.employeeVehicle!)))
-        Model : \(String(describing: employee.employeeVehicle!.category))
-        Plate : \(String(describing: employee.employeeVehicle!.plate))
-        Color : \(String(describing: employee.employeeVehicle!.color))
+        Employee has a \(String(describing: type(of:employeeVehicle)))
+        Model : \(String(describing: employeeVehicle.category))
+        Plate : \(String(describing: employeeVehicle.plate))
+        Color : \(String(describing: employeeVehicle.color))
         With a side car
         
         Occupation rate : \(String(describing: employee.monthlyIncome))
