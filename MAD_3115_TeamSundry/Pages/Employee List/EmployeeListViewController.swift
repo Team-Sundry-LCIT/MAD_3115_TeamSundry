@@ -21,6 +21,9 @@ class EmployeeListViewController: UIViewController {
         employeesListtableView.delegate = self
         employeesListtableView.dataSource = self
         // Do any additional setup after loading the view.
+        
+//        let emp = Employee(employeeId: "2134", name: "Tilak", birthYear: 1997)
+//        employeeList.append(emp)
     }
 
     @IBAction func addEmployee(_ sender: Any) {
@@ -56,18 +59,35 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
+    
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            employeeList.remove(at: indexPath.row)
+            //employeeList.remove(at: indexPath.row)
+            self.employeeList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+    
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let storyBoard : UIStoryboard = UIStoryboard(name: "EmployeeDetails", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EmployeeDetails") as! EmployeeDetailsViewController
+        nextViewController.delegate = self
+        nextViewController.employee = self.employeeList[indexPath.row]
+        self.present(nextViewController, animated: true)
+
     }
     
     func updateEmployeeList(with employees : [EmployeeProtocol]){
