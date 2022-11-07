@@ -48,9 +48,13 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -59,7 +63,11 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
             EmplyeeStruct.ids.remove(at: indexPath.row)
             EmplyeeStruct.images.remove(at: indexPath.row)
             
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.employeeList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
+            
+//            tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
