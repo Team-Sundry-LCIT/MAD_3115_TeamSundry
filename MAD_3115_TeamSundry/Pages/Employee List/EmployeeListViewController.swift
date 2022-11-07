@@ -18,6 +18,9 @@ class EmployeeListViewController: UIViewController {
         employeesListtableView.delegate = self
         employeesListtableView.dataSource = self
         // Do any additional setup after loading the view.
+        
+//        let emp = Employee(employeeId: "2134", name: "Tilak", birthYear: 1997)
+//        employeeList.append(emp)
     }
 
     @IBAction func addEmployee(_ sender: Any) {
@@ -69,6 +72,7 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         nextViewController.delegate = self
         nextViewController.employee = self.employeeList[indexPath.row]
         self.present(nextViewController, animated: true)
+//        navigationController?.pushViewController(nextViewController, animated: true)
 
     }
     

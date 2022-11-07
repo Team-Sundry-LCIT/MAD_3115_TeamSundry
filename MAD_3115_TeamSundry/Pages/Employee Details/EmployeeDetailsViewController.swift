@@ -21,6 +21,7 @@ class EmployeeDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        populateData()
         // Do any additional setup after loading the view.
     }
     
@@ -37,26 +38,30 @@ class EmployeeDetailsViewController: UIViewController {
     
     func populateData(){
         
-        let a = ""
+//        print(employee)
         
-        nameLbl.text = "Tilak Acharya"
-        typeLbl.text = "An Android Developer"
+
+        
+        nameLbl.text = "\(String(describing: employee!.name))"
+        typeLbl.text = "An \(String(describing: type(of:employee!)))"
         
         dataLbl.text = """
-        Name: \(a), a \(a)
-        Age : \(a)
+        Name: \(String(describing: employee!.name)), a \(String(describing: type(of:employee!)) )
+        Age : \(String(describing: employee!.age) )
         
-        Employee has a \(a)
-        Model : \(a)
-        Plate : \(a)
-        Color : \(a)
+        Employee has a \(String(describing: type(of:employee!.employeeVehicle!)))
+        Model : \(String(describing: employee!.employeeVehicle!.category))
+        Plate : \(String(describing: employee!.employeeVehicle!.plate))
+        Color : \(String(describing: employee!.employeeVehicle!.color))
         With a side car
         
-        Occupation rate : \(a)
-        Annual Income : \(a)
+        Occupation rate : \(String(describing: employee!.monthlyIncome))
+        Annual Income : \(String(describing: employee!.annualIncome()))
         He/She has corrected
         
         """
+        
+        print(dataLbl.text!)
         
     }
 
