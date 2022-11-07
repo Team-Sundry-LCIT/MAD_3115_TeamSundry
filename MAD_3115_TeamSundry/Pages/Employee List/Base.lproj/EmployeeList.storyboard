@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XqV-zJ-dfl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XqV-zJ-dfl">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Our Employees-->
+        <!--Employees-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="EmployeeListViewController" customModule="MAD_3115_TeamSundry" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,42 +27,47 @@
                                 <rect key="frame" x="10" y="209" width="370" height="591"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeCell" rowHeight="65" id="oVx-zl-7uN" customClass="EmployeeListTableViewCell" customModule="MAD_3115_TeamSundry" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="370" height="65"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeCell" rowHeight="85" id="oVx-zl-7uN" customClass="EmployeeListTableViewCell" customModule="MAD_3115_TeamSundry" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="370" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oVx-zl-7uN" id="rJr-zP-fFr">
-                                            <rect key="frame" x="0.0" y="0.0" width="370" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_Messages-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="aC0-jU-G5Z">
-                                                    <rect key="frame" x="10" y="12.666666666666664" width="40" height="40"/>
+                                                    <rect key="frame" x="10" y="22.666666666666671" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Bpi-yz-1sP"/>
                                                         <constraint firstAttribute="height" constant="40" id="vre-Xt-MA1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="c4f-3Q-FhY">
-                                                    <rect key="frame" x="60" y="9.3333333333333321" width="300" height="46.666666666666671"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="c4f-3Q-FhY">
+                                                    <rect key="frame" x="60" y="10" width="300" height="65"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name : Tim Cook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35w-xf-jom">
-                                                            <rect key="frame" x="0.0" y="0.0" width="130.66666666666666" height="20.333333333333332"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="135" height="31.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID : 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ml-qu-9bH">
-                                                            <rect key="frame" x="0.0" y="26.333333333333329" width="31.666666666666668" height="20.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="33.666666666666664" width="31.666666666666668" height="31.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="65" id="ybH-7p-MKZ"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="c4f-3Q-FhY" secondAttribute="trailing" constant="10" id="4fU-PW-54o"/>
                                                 <constraint firstItem="c4f-3Q-FhY" firstAttribute="leading" secondItem="aC0-jU-G5Z" secondAttribute="trailing" constant="10" id="7yd-mw-44x"/>
+                                                <constraint firstItem="c4f-3Q-FhY" firstAttribute="top" secondItem="rJr-zP-fFr" secondAttribute="top" constant="10" id="HBs-Xp-Gc8"/>
                                                 <constraint firstItem="aC0-jU-G5Z" firstAttribute="centerY" secondItem="rJr-zP-fFr" secondAttribute="centerY" id="fy0-VY-M5p"/>
+                                                <constraint firstAttribute="bottom" secondItem="c4f-3Q-FhY" secondAttribute="bottom" constant="10" id="iKx-6A-cMp"/>
                                                 <constraint firstItem="aC0-jU-G5Z" firstAttribute="leading" secondItem="rJr-zP-fFr" secondAttribute="leading" constant="10" id="uhg-hS-6cJ"/>
                                                 <constraint firstItem="c4f-3Q-FhY" firstAttribute="centerY" secondItem="rJr-zP-fFr" secondAttribute="centerY" id="zZt-WT-14x"/>
                                             </constraints>
@@ -88,7 +93,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mnu-2g-UfK" secondAttribute="bottom" constant="10" id="pkc-Ev-dym"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Our Employees" largeTitleDisplayMode="always" id="WP4-he-0Uo">
+                    <navigationItem key="navigationItem" title="Employees" largeTitleDisplayMode="always" id="WP4-he-0Uo">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="HdX-aX-EWl">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Qml-Md-qdC">
                                 <rect key="frame" x="269.33333333333331" y="5" width="104.66666666666669" height="34.333333333333336"/>

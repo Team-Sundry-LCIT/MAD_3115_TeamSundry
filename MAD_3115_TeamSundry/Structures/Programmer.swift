@@ -24,10 +24,15 @@ struct Programmer: ProgrammerProtocol, EmployeeProtocol, EmployeeContract {
     let GainFactorProjects = 200
     
     var description: String {
-        let text = """
-         and completed \(nbProjects) projects.
-        His/Her estimated annual income is \(annualIncome())
-        """
+       let text =
+          """
+          Name: \(name), a \(Self.self)
+          Age: \(age) \n
+          \(employeeVehicle != nil ? employeeVehicle!.description : "")
+          Occupation rate : \(rate)%
+          Annual income : $ \(annualIncome())
+          He/She has completed \(nbProjects) projects.
+          """
         return text
     }
     

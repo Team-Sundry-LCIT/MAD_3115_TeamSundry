@@ -28,10 +28,14 @@ struct Manager: ManagerProtocol, EmployeeProtocol, EmployeeContract {
     let GainFactorTravel = 100
     
     var description: String {
-        let text = """
-         He/She travelled \(nbTravelDays) days and
-        has brought \(nbClients) new clients.
-        His/Her estimated annual income is \(annualIncome())
+        let text =
+           """
+           Name: \(name), a \(Self.self)
+           Age: \(age) \n
+           \(employeeVehicle != nil ? employeeVehicle!.description : "")
+           Occupation rate : \(rate)%
+           Annual income : $ \(annualIncome())
+        He/She has brought \(nbClients) new clients.
         """
         return text
     }

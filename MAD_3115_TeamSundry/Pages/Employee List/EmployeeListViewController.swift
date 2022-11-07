@@ -6,7 +6,6 @@
 import UIKit
 
 class EmployeeListViewController: UIViewController {
-
     
     @IBOutlet weak var employeesListtableView: UITableView!
     
@@ -20,10 +19,6 @@ class EmployeeListViewController: UIViewController {
         super.viewDidLoad()
         employeesListtableView.delegate = self
         employeesListtableView.dataSource = self
-        // Do any additional setup after loading the view.
-        
-//        let emp = Employee(employeeId: "2134", name: "Tilak", birthYear: 1997)
-//        employeeList.append(emp)
     }
 
     @IBAction func addEmployee(_ sender: Any) {
@@ -33,9 +28,6 @@ class EmployeeListViewController: UIViewController {
         nextViewController.employeeList = self.employeeList
         navigationController?.pushViewController(nextViewController, animated: true)
     }
-    
-    
-    
 }
 
 extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
@@ -50,8 +42,8 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = employeesListtableView.dequeueReusableCell(withIdentifier: "EmployeeCell") as? EmployeeListTableViewCell {
             let list = searching ? searchEmployee : employeeList
-            cell.nameLabel?.text = list[indexPath.row].name
-            cell.idLabel?.text = list[indexPath.row].employeeID
+            cell.nameLabel?.text = "Name : " + list[indexPath.row].name
+            cell.idLabel?.text =  "ID : " + list[indexPath.row].employeeID
             cell.avatarImage?.image = UIImage(named: "_Messages-avatar")
             return cell
         } else {
@@ -59,13 +51,9 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
