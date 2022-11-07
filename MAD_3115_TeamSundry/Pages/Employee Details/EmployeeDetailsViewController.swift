@@ -33,12 +33,12 @@ class EmployeeDetailsViewController: UIViewController {
     
     func populateData(){
         
-        guard let employee = employee , let employeeVehicle = employee.employeeVehicle else {
+        guard let employee = employee else {
             return
         }
         
         nameLbl.text = "\(String(describing: employee.name))"
-        typeLbl.text = "An \(String(describing: employee.age))"
+        typeLbl.text = "An \(String(describing: type(of:employee)))"
         dataLbl.text = employee.description
     }
 }

@@ -70,10 +70,11 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        let list = searching ? searchEmployee : employeeList
         let storyBoard : UIStoryboard = UIStoryboard(name: "EmployeeDetails", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EmployeeDetails") as! EmployeeDetailsViewController
         nextViewController.delegate = self
-        nextViewController.employee = self.employeeList[indexPath.row]
+        nextViewController.employee = list[indexPath.row]
         self.present(nextViewController, animated: true)
 
     }
