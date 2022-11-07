@@ -38,26 +38,29 @@ class EmployeeDetailsViewController: UIViewController {
     
     func populateData(){
         
-        nameLbl.text = "\(String(describing: employee!.name))"
-        typeLbl.text = "An \(String(describing: employee!.employeeID))"
+        guard let employee = employee else {
+            return
+        }
+        
+        nameLbl.text = "\(String(describing: employee.name))"
+        typeLbl.text = "An \(String(describing: employee.employeeID))"
         
         dataLbl.text = """
-        Name: \(String(describing: employee!.name)), a \(String(describing: type(of:employee!)) )
-        Age : \(String(describing: employee!.age) )
+        Name: \(String(describing: employee.name)), a \(String(describing: type(of:employee)) )
+        Age : \(String(describing: employee.age) )
         
-        Employee has a \(String(describing: type(of:employee!.employeeVehicle!)))
-        Model : \(String(describing: employee!.employeeVehicle!.category))
-        Plate : \(String(describing: employee!.employeeVehicle!.plate))
-        Color : \(String(describing: employee!.employeeVehicle!.color))
+        Employee has a \(String(describing: type(of:employee.employeeVehicle!)))
+        Model : \(String(describing: employee.employeeVehicle!.category))
+        Plate : \(String(describing: employee.employeeVehicle!.plate))
+        Color : \(String(describing: employee.employeeVehicle!.color))
         With a side car
         
-        Occupation rate : \(String(describing: employee!.monthlyIncome))
-        Annual Income : \(String(describing: employee!.annualIncome()))
+        Occupation rate : \(String(describing: employee.monthlyIncome))
+        Annual Income : \(String(describing: employee.annualIncome()))
         He/She has corrected
         
         """
-        
-//        print(dataLbl.text!)
+    
         
     }
 
