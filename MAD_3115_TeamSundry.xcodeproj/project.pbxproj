@@ -33,7 +33,6 @@
 		999DB8372908879A00D4AD0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999DB8362908879A00D4AD0A /* Images.xcassets */; };
 		999DB83C2908884800D4AD0A /* Test Files in Resources */ = {isa = PBXBuildFile; fileRef = 999DB83A2908884800D4AD0A /* Test Files */; };
 		BD30CAA8291580FE002E576A /* EmployeeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD30CAA7291580FE002E576A /* EmployeeListTableViewCell.swift */; };
-		BD7F7AD52917FDFD00F58ECE /* EmplyeeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F7AD42917FDFD00F58ECE /* EmplyeeStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +83,6 @@
 		999DB8362908879A00D4AD0A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		999DB83A2908884800D4AD0A /* Test Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Test Files"; sourceTree = "<group>"; };
 		BD30CAA7291580FE002E576A /* EmployeeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListTableViewCell.swift; sourceTree = "<group>"; };
-		BD7F7AD42917FDFD00F58ECE /* EmplyeeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmplyeeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +133,6 @@
 				999DB8062908869400D4AD0A /* EmployeeListViewController.swift */,
 				999DB8082908869400D4AD0A /* EmployeeList.storyboard */,
 				BD30CAA7291580FE002E576A /* EmployeeListTableViewCell.swift */,
-				BD7F7AD42917FDFD00F58ECE /* EmplyeeStruct.swift */,
 			);
 			path = "Employee List";
 			sourceTree = "<group>";
@@ -391,7 +388,6 @@
 				990E10B3290C82A700B9238F /* RegisterFormViewController.swift in Sources */,
 				BD30CAA8291580FE002E576A /* EmployeeListTableViewCell.swift in Sources */,
 				999DB8052908869400D4AD0A /* SceneDelegate.swift in Sources */,
-				BD7F7AD52917FDFD00F58ECE /* EmplyeeStruct.swift in Sources */,
 				2C0F737C29183184003E0195 /* Manager.swift in Sources */,
 				2C0F73802918318D003E0195 /* Tester.swift in Sources */,
 				2C0F739229183374003E0195 /* Temporary.swift in Sources */,

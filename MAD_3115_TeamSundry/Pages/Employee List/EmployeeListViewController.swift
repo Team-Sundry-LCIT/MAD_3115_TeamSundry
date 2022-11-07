@@ -13,6 +13,9 @@ class EmployeeListViewController: UIViewController {
     var employeeList = [EmployeeProtocol]()
     let defaults = UserDefaults.standard
     
+    var searchEmployee = [EmployeeProtocol]()
+    var searching = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         employeesListtableView.delegate = self
@@ -30,17 +33,25 @@ class EmployeeListViewController: UIViewController {
         nextViewController.employeeList = self.employeeList
         navigationController?.pushViewController(nextViewController, animated: true)
     }
+    
+    
+    
 }
 
-extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource {
+extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return employeeList.count
+        if searching {
+            return searchEmployee.count
+        } else {
+            return employeeList.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = employeesListtableView.dequeueReusableCell(withIdentifier: "EmployeeCell") as? EmployeeListTableViewCell {
-            cell.nameLabel?.text = employeeList[indexPath.row].name
-            cell.idLabel?.text = employeeList[indexPath.row].employeeID
+            let list = searching ? searchEmployee : employeeList
+            cell.nameLabel?.text = list[indexPath.row].name
+            cell.idLabel?.text = list[indexPath.row].employeeID
             cell.avatarImage?.image = UIImage(named: "_Messages-avatar")
             return cell
         } else {
@@ -59,7 +70,7 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            
+            //employeeList.remove(at: indexPath.row)
             self.employeeList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
@@ -93,4 +104,13 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         employeeList = defaults.object(forKey: "SavedEmployeeList") as? [EmployeeProtocol] ?? [EmployeeProtocol]()
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+            searchEmployee = employeeList.filter { $0.name.lowercased().contains(searchText.lowercased()) || $0.employeeID.lowercased().contains(searchText.lowercased()) }
+            searching = true
+        } else {
+            searching = false
+        }
+        employeesListtableView.reloadData()
+    }
 }
