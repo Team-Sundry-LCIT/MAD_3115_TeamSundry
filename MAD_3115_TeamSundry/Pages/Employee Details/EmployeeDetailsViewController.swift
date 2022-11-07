@@ -38,12 +38,8 @@ class EmployeeDetailsViewController: UIViewController {
     
     func populateData(){
         
-//        print(employee)
-        
-
-        
         nameLbl.text = "\(String(describing: employee!.name))"
-        typeLbl.text = "An \(String(describing: type(of:employee!)))"
+        typeLbl.text = "An \(String(describing: employee!.employeeID))"
         
         dataLbl.text = """
         Name: \(String(describing: employee!.name)), a \(String(describing: type(of:employee!)) )
@@ -61,7 +57,7 @@ class EmployeeDetailsViewController: UIViewController {
         
         """
         
-        print(dataLbl.text!)
+//        print(dataLbl.text!)
         
     }
 
