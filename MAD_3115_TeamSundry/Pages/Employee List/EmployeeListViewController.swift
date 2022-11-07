@@ -59,15 +59,11 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-//            EmplyeeStruct.names.remove(at: indexPath.row)
-//            EmplyeeStruct.ids.remove(at: indexPath.row)
-//            EmplyeeStruct.images.remove(at: indexPath.row)
             
             self.employeeList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
-            
-//            tableView.deleteRows(at: [indexPath], with: .fade)
+    
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -80,7 +76,6 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         nextViewController.delegate = self
         nextViewController.employee = self.employeeList[indexPath.row]
         self.present(nextViewController, animated: true)
-//        navigationController?.pushViewController(nextViewController, animated: true)
 
     }
     

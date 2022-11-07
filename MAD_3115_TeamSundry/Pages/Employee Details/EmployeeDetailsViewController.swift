@@ -22,7 +22,7 @@ class EmployeeDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         populateData()
-        // Do any additional setup after loading the view.
+        
     }
     
 
@@ -38,10 +38,7 @@ class EmployeeDetailsViewController: UIViewController {
     
     func populateData(){
         
-        guard let employee = employee else {
-            return
-        }
-        guard let employeeVehicle = employee.employeeVehicle else {
+        guard let employee = employee , let employeeVehicle = employee.employeeVehicle else {
             return
         }
         
