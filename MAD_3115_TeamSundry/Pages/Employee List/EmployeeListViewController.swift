@@ -62,6 +62,16 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let storyBoard : UIStoryboard = UIStoryboard(name: "EmployeeDetails", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EmployeeDetails") as! EmployeeDetailsViewController
+        nextViewController.delegate = self
+        nextViewController.employee = self.employeeList[indexPath.row]
+        self.present(nextViewController, animated: true)
+
+    }
+    
     func updateEmployeeList(with employees : [EmployeeProtocol]){
         employeeList = employees
         employeesListtableView.reloadData()

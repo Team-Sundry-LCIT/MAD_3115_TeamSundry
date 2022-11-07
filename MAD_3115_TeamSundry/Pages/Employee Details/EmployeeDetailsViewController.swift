@@ -15,6 +15,9 @@ class EmployeeDetailsViewController: UIViewController {
     
     @IBOutlet weak var dataLbl: UILabel!
     
+    weak var delegate: EmployeeListViewController?
+    var employee:EmployeeProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
