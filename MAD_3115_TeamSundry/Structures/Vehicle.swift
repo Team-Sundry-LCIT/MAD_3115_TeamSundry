@@ -10,6 +10,7 @@ protocol VehicleProtocol{
     var plate:String { get set }
     var color:String { get set }
     var category:String { get set }
+    var description : String {get}
 }
 
 struct Vehicle : VehicleProtocol {
@@ -41,12 +42,16 @@ struct Vehicle : VehicleProtocol {
 //MARK: Vehicle Extension
 extension Vehicle : CustomStringConvertible {
     var description: String {
-        """
-        \t- make: \(make)
-        \t- plate: \(plate)
-        \t- colour: \(color)
-        \t- category: \(category)
-        """
+//        let a =
+//        """
+//        Employee has a \(Self.self) \n
+//        \t- Model: \(make)
+//        \t- Plate: \(plate)
+//        \t- Colour: \(color)
+//        \t- Category: \(category)
+//        """
+//        return a
+        return ""
     }
 }
 

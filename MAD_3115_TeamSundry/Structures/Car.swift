@@ -21,18 +21,16 @@ struct Car: CarProtocol, VehicleProtocol {
     var type:String
     
     var description: String {
-        let a = """
-        Employee has a car\n
-        """
+        let text = """
+                Employee has a \(Self.self)
+                \t- Model: \(make)
+                \t- Plate: \(plate)
+                \t- Colour: \(color)
+                \t- Category: \(category)
+                \t- type: \(type)
+            """
         
-        let b = """
-        \n\t- gear type: \(gear)
-        \t- type: \(type)
-        """
-        
-        return a +
-//        super.description +
-        b
+        return text
     }
     
     //initialisation

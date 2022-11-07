@@ -10,9 +10,7 @@ import UIKit
 class EmployeeDetailsViewController: UIViewController {
 
     @IBOutlet weak var nameLbl: UILabel!
-    
     @IBOutlet weak var typeLbl: UILabel!
-    
     @IBOutlet weak var dataLbl: UILabel!
     
     weak var delegate: EmployeeListViewController?
@@ -20,12 +18,9 @@ class EmployeeDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         populateData()
-        
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -43,25 +38,7 @@ class EmployeeDetailsViewController: UIViewController {
         }
         
         nameLbl.text = "\(String(describing: employee.name))"
-        typeLbl.text = "An \(String(describing: employee.employeeID))"
-        
-        dataLbl.text = """
-        Name: \(String(describing: employee.name)), a \(String(describing: type(of:employee)) )
-        Age : \(String(describing: employee.age) )
-        
-        Employee has a \(String(describing: type(of:employeeVehicle)))
-        Model : \(String(describing: employeeVehicle.category))
-        Plate : \(String(describing: employeeVehicle.plate))
-        Color : \(String(describing: employeeVehicle.color))
-        With a side car
-        
-        Occupation rate : \(String(describing: employee.monthlyIncome))
-        Annual Income : \(String(describing: employee.annualIncome()))
-        He/She has corrected
-        
-        """
-    
-        
+        typeLbl.text = "An \(String(describing: employee.age))"
+        dataLbl.text = employee.description
     }
-
 }

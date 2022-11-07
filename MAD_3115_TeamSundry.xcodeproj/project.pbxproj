@@ -17,6 +17,7 @@
 		2C0F739129183374003E0195 /* Motorcycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F7388291831BC003E0195 /* Motorcycle.swift */; };
 		2C0F739229183374003E0195 /* Temporary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F738B291831C0003E0195 /* Temporary.swift */; };
 		2C0F739329183374003E0195 /* Permanent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F738A291831C0003E0195 /* Permanent.swift */; };
+		2C0F739629196D8F003E0195 /* EmployeeList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C0F739529196D8E003E0195 /* EmployeeList.plist */; };
 		990E10AD290C822000B9238F /* EmployeeDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990E10AC290C822000B9238F /* EmployeeDetails.storyboard */; };
 		990E10AF290C823B00B9238F /* RegisterForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990E10AE290C823B00B9238F /* RegisterForm.storyboard */; };
 		990E10B1290C829400B9238F /* EmployeeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E10B0290C829400B9238F /* EmployeeDetailsViewController.swift */; };
@@ -63,6 +64,7 @@
 		2C0F738A291831C0003E0195 /* Permanent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permanent.swift; sourceTree = "<group>"; };
 		2C0F738B291831C0003E0195 /* Temporary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temporary.swift; sourceTree = "<group>"; };
 		2C0F738C291831C0003E0195 /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
+		2C0F739529196D8E003E0195 /* EmployeeList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EmployeeList.plist; sourceTree = "<group>"; };
 		990E10AC290C822000B9238F /* EmployeeDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeDetails.storyboard; sourceTree = "<group>"; };
 		990E10AE290C823B00B9238F /* RegisterForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterForm.storyboard; sourceTree = "<group>"; };
 		990E10B0290C829400B9238F /* EmployeeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 				2C0F7388291831BC003E0195 /* Motorcycle.swift */,
 			);
 			path = Structures;
+			sourceTree = "<group>";
+		};
+		2C0F739429196D6D003E0195 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				2C0F739529196D8E003E0195 /* EmployeeList.plist */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		990E10B4290C82FE00B9238F /* Employee List */ = {
@@ -218,6 +228,7 @@
 		999DB834290886DD00D4AD0A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				2C0F739429196D6D003E0195 /* Storage */,
 				990E10B6290C832200B9238F /* Register Form */,
 				990E10B5290C830E00B9238F /* Employee Details */,
 				990E10B4290C82FE00B9238F /* Employee List */,
@@ -346,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0F739629196D8F003E0195 /* EmployeeList.plist in Resources */,
 				999DB80F2908869600D4AD0A /* LaunchScreen.storyboard in Resources */,
 				999DB83C2908884800D4AD0A /* Test Files in Resources */,
 				999DB8372908879A00D4AD0A /* Images.xcassets in Resources */,

@@ -29,13 +29,14 @@ struct Motorcycle: MotorcycleProtocol, VehicleProtocol {
 
 extension Motorcycle: CustomStringConvertible {
     var description: String {
-        let a = """
-        Employee has a motorcycle\n
+        let text = """
+                Employee has a \(Self.self)
+                \t- Model: \(make)
+                \t- Plate: \(plate)
+                \t- Colour: \(color)
+                \t- Category: \(category)
+                \t- \(sidecar ? "with" : "without") a sidecar
         """
-        
-        let b = """
-        \n\t- \(sidecar ? "with" : "without") sidecar
-        """
-        return a + b
+        return text
     }
 }

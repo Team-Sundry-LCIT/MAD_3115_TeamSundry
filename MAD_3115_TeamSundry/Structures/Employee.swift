@@ -14,7 +14,7 @@ protocol EmployeeProtocol{
     var rate: Int { get set }
     var employeeVehicle: VehicleProtocol? {get set}
     var contract: ContractProtocol? { get set }
-    
+    var description : String {get}
     func calculateAge(birthYear: Int) -> Int
     func printData(_ msg :String)
     func annualIncome() -> Double
@@ -64,13 +64,15 @@ struct Employee : EmployeeProtocol, EmployeeContract {
 
 //MARK: - Employee Extension
 extension Employee : CustomStringConvertible {
-  var description: String {
-      """
-      Name: \(name), a \(Self.self) \n
-      Age: \(age)
-      \(employeeVehicle ?? Vehicle())
-      \(name) has an Occupation rate: \(rate)%
-      """
+    var description: String {
+//      """
+//      Name: \(name), a \(Self.self) \n
+//      Age: \(age)
+//      \(employeeVehicle ?? Vehicle())
+//      Occupation rate : \(rate)%
+//      Annual income : $ \(annualIncome())
+//      """
+        return ""
   }
 }
 
