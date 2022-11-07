@@ -15,10 +15,14 @@ class EmployeeDetailsViewController: UIViewController {
     
     @IBOutlet weak var dataLbl: UILabel!
     
+    weak var delegate: EmployeeListViewController?
+    var employee:EmployeeProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        populateData()
+        
     }
     
 
@@ -34,26 +38,29 @@ class EmployeeDetailsViewController: UIViewController {
     
     func populateData(){
         
-        let a = ""
+        guard let employee = employee , let employeeVehicle = employee.employeeVehicle else {
+            return
+        }
         
-        nameLbl.text = "Tilak Acharya"
-        typeLbl.text = "An Android Developer"
+        nameLbl.text = "\(String(describing: employee.name))"
+        typeLbl.text = "An \(String(describing: employee.employeeID))"
         
         dataLbl.text = """
-        Name: \(a), a \(a)
-        Age : \(a)
+        Name: \(String(describing: employee.name)), a \(String(describing: type(of:employee)) )
+        Age : \(String(describing: employee.age) )
         
-        Employee has a \(a)
-        Model : \(a)
-        Plate : \(a)
-        Color : \(a)
+        Employee has a \(String(describing: type(of:employeeVehicle)))
+        Model : \(String(describing: employeeVehicle.category))
+        Plate : \(String(describing: employeeVehicle.plate))
+        Color : \(String(describing: employeeVehicle.color))
         With a side car
         
-        Occupation rate : \(a)
-        Annual Income : \(a)
+        Occupation rate : \(String(describing: employee.monthlyIncome))
+        Annual Income : \(String(describing: employee.annualIncome()))
         He/She has corrected
         
         """
+    
         
     }
 
