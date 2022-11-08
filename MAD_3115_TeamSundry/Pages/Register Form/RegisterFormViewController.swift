@@ -114,8 +114,6 @@ class RegisterFormViewController: UIViewController, UIPickerViewDelegate, UIPick
                 resetRegisterForm()
                 showAlert(title: "Register Sucess", actionTitle: "OK", message: "Employee registerd successfully", preferredStyle: .alert)
             }                    
-        }else{
-            showAlert(title: "Error", actionTitle: "OK", message: "Something went wrong. Please check your entered values.", preferredStyle: .alert)
         }
     }
     
@@ -338,7 +336,6 @@ enum EmployeeType : String, CaseIterable{
     case Programmer
     case Manager
     case Tester
-    
 }
 
 enum VehicleType : String, CaseIterable{
