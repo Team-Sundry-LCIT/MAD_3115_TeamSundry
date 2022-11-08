@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fux-fm-ggh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fux-fm-ggh">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUC-ZX-fur">
-                                <rect key="frame" x="0.0" y="143" width="390" height="601"/>
+                                <rect key="frame" x="0.0" y="91" width="390" height="653"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxD-gq-t2n">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1044"/>
@@ -207,7 +207,7 @@
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVb-Ku-shW">
                                                         <rect key="frame" x="0.0" y="391" width="350" height="100"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="8dd-pz-olf"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="8dd-pz-olf"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="dataSource" destination="Y6W-OH-hqX" id="oR5-c8-iwx"/>
@@ -466,7 +466,7 @@
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxm-gw-LcO">
                                                         <rect key="frame" x="0.0" y="893" width="350" height="100"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="8f8-2J-iUg"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="8f8-2J-iUg"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="dataSource" destination="Y6W-OH-hqX" id="Mlq-6N-ZhP"/>
