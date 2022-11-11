@@ -57,11 +57,17 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            //employeeList.remove(at: indexPath.row)
-            self.employeeList.remove(at: indexPath.row)
+            var emplyee : EmployeeProtocol
+            if searching {
+                emplyee = searchEmployee[indexPath.row]
+                searchEmployee.remove(at: indexPath.row)
+            }else{
+                emplyee = employeeList[indexPath.row]
+                employeeList.remove(at: indexPath.row)
+            }
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
+            removeEmployee(selectedSmployee: emplyee)
     
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -101,5 +107,10 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
             searching = false
         }
         employeesListtableView.reloadData()
+    }
+    
+    private func removeEmployee(selectedSmployee : EmployeeProtocol){
+        employeeList.removeAll(where: {$0.employeeID == selectedSmployee.employeeID})
+        searchEmployee.removeAll(where: {$0.employeeID == selectedSmployee.employeeID})
     }
 }
